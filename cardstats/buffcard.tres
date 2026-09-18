@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://dq3o0myjuhh2u"]
+
+[ext_resource type="Script" uid="uid://dox4rg25uuqlo" path="res://cardstats/CardData.gd" id="1_gs56y"]
+[ext_resource type="Texture2D" uid="uid://dehln2wkglwxu" path="res://assets/cardassets/buffcard.png" id="2_atb3p"]
+
+[resource]
+script = ExtResource("1_gs56y")
+card_name = "buff"
+BUFF = 3
+texture = ExtResource("2_atb3p")
+metadata/_custom_type_script = "uid://dox4rg25uuqlo"

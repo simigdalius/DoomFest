@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://cbf7dn8oj61sy"]
+
+[ext_resource type="Script" uid="uid://danxukp0pi4rh" path="res://charactersscenes/playerstats.gd" id="1_m3fo1"]
+[ext_resource type="Texture2D" uid="uid://b7redps8uxfo7" path="res://assets/playerstats/2026-09-14-144102-Drawing 27.png" id="7_jb6gv"]
+[ext_resource type="Texture2D" uid="uid://c5f72ppnmwj0i" path="res://assets/playerstats/2026-09-14-144111-Health (2).png" id="8_etogs"]
+[ext_resource type="Texture2D" uid="uid://crbrxm57gr1qs" path="res://assets/playerstats/2026-09-14-144046-Health (3).png" id="9_2vsxv"]
+[ext_resource type="Texture2D" uid="uid://bqml0rypkp2tl" path="res://assets/playerstats/2026-09-14-144106-Healthbar (3).png" id="10_q8i41"]
+[ext_resource type="Texture2D" uid="uid://dobj0jykvybjq" path="res://assets/playerstats/2026-09-14-144041-Healthbar (5).png" id="11_t18ky"]
+[ext_resource type="Texture2D" uid="uid://du4tnlomh474c" path="res://assets/playerstats/2026-09-14-144117-Healthbar (4).png" id="12_yh7fk"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8lowd"]
+texture = ExtResource("7_jb6gv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_johx6"]
+texture = ExtResource("8_etogs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sdwat"]
+texture = ExtResource("9_2vsxv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o5tta"]
+texture = ExtResource("12_yh7fk")
+
+[node name="Control" type="Control" unique_id=2129228041]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m3fo1")
+
+[node name="Panel4" type="Panel" parent="." unique_id=1314614900]
+z_index = 1
+layout_mode = 0
+offset_left = 847.0
+offset_top = 140.0
+offset_right = 881.0
+offset_bottom = 158.61539
+scale = Vector2(6.5, 6.5)
+theme_override_styles/panel = SubResource("StyleBoxTexture_8lowd")
+
+[node name="healthicon" type="Panel" parent="Panel4" unique_id=837842322]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 10.0
+offset_bottom = 8.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_johx6")
+
+[node name="Panel2" type="Panel" parent="Panel4" unique_id=186235244]
+layout_mode = 0
+offset_left = 2.4615386
+offset_top = 7.8461537
+offset_right = 10.461538
+offset_bottom = 15.846153
+theme_override_styles/panel = SubResource("StyleBoxTexture_sdwat")
+
+[node name="front" type="TextureProgressBar" parent="Panel4" unique_id=1278701794]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 2.0
+offset_right = 31.0
+offset_bottom = 7.0
+texture_under = ExtResource("10_q8i41")
+texture_progress = ExtResource("11_t18ky")
+
+[node name="Panel" type="Panel" parent="Panel4" unique_id=439511885]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 2.0
+offset_right = 32.0
+offset_bottom = 7.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_o5tta")

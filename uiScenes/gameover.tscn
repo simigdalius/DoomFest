@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://b37r0crf65abj"]
+
+[ext_resource type="Script" uid="uid://7qxuwxvoxw2e" path="res://uiscripts/gameover.gd" id="1_qjp65"]
+[ext_resource type="Texture2D" uid="uid://c261nr7k3vfjk" path="res://assets/uiassets/2026-09-14-145323-Drawing 12 (4).png" id="2_8snbl"]
+[ext_resource type="Texture2D" uid="uid://406wv17unmt" path="res://assets/uiassets/2026-09-14-145332-Drawing 12 (5).png" id="3_ge7u8"]
+[ext_resource type="Texture2D" uid="uid://mosg72txomv6" path="res://assets/uiassets/2026-09-14-145327-Drawing 12 (6).png" id="4_25hl8"]
+[ext_resource type="Texture2D" uid="uid://1x474msu3skj" path="res://assets/uiassets/2026-09-14-145349-Idle (2).png" id="5_at1p3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qdld5"]
+bg_color = Color(0.35686275, 0.40392157, 0.54901963, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ri8wy"]
+texture = ExtResource("2_8snbl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_000nd"]
+texture = ExtResource("2_8snbl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_whbap"]
+texture = ExtResource("3_ge7u8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nc4yd"]
+texture = ExtResource("4_25hl8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_moi82"]
+texture = ExtResource("2_8snbl")
+
+[node name="Control" type="Control" unique_id=1171247362]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qjp65")
+
+[node name="Panel" type="Panel" parent="." unique_id=282808932]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qdld5")
+
+[node name="Button2" type="Button" parent="." unique_id=878024199]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 512.0
+offset_right = 480.0
+offset_bottom = 602.0
+theme_override_colors/font_color = Color(0.8745098, 0.6156863, 0.8745098, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.31088313, 6.540969e-05, 0.31101242, 1)
+theme_override_colors/icon_pressed_color = Color(0.8745098, 0.6156863, 0.8745098, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_ri8wy")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_000nd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_whbap")
+text = "quit"
+
+[node name="Button3" type="Button" parent="." unique_id=1292124371]
+layout_mode = 0
+offset_left = 664.0
+offset_top = 512.0
+offset_right = 920.0
+offset_bottom = 602.0
+theme_override_colors/font_color = Color(0.8745098, 0.6156863, 0.8745098, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.31088313, 6.540969e-05, 0.31101242, 1)
+theme_override_colors/icon_pressed_color = Color(0.8745098, 0.6156863, 0.8745098, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_ri8wy")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_000nd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_whbap")
+text = "retry"
+
+[node name="Panel2" type="Panel" parent="." unique_id=1535347444]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 40.0
+offset_right = 1101.0
+offset_bottom = 496.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_nc4yd")
+
+[node name="Label" type="Label" parent="Panel2" unique_id=1466637997]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 154.0
+offset_right = 976.0
+offset_bottom = 444.0
+theme_override_colors/font_color = Color(0.30980393, 0, 0.30980393, 1)
+theme_override_font_sizes/font_size = 20
+text = "ohh.. you dead... let me see whats your score... 
+1. with that score you dont deserve reseruction
+2. ok mid try
+3. ... wait what.... how  you deserve the reseruction everyone who passes in front of you will
+think only 2 words \"imminent doom\""
+
+[node name="Panel3" type="Panel" parent="." unique_id=797446036]
+layout_mode = 0
+offset_left = 306.0
+offset_top = 13.0
+offset_right = 844.0
+offset_bottom = 137.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_moi82")
+
+[node name="Label" type="Label" parent="Panel3" unique_id=1315128955]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 12.0
+offset_right = 495.0
+offset_bottom = 109.0
+theme_override_font_sizes/font_size = 30
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="." unique_id=436121084]
+layout_mode = 0
+offset_left = 356.0
+offset_top = 139.0
+offset_right = 801.0
+offset_bottom = 181.0
+theme_override_colors/font_color = Color(0.30980393, 0, 0.30980393, 1)
+theme_override_font_sizes/font_size = 30
+text = "Thanks for playing Doom Fest !"
+
+[node name="20260914145349Idle(2)" type="Sprite2D" parent="." unique_id=1910170411]
+position = Vector2(566, 425.00003)
+scale = Vector2(5, 5)
+texture = ExtResource("5_at1p3")
+
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

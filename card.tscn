@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://nkthysd0c3dh"]
+
+[ext_resource type="Script" uid="uid://clxgtslhvffsa" path="res://card.gd" id="1_rjlel"]
+[ext_resource type="Script" uid="uid://dox4rg25uuqlo" path="res://cardstats/CardData.gd" id="2_q5obu"]
+
+[sub_resource type="Resource" id="Resource_gj5rp"]
+script = ExtResource("2_q5obu")
+metadata/_custom_type_script = "uid://dox4rg25uuqlo"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gj5rp"]
+size = Vector2(128, 128)
+
+[node name="Node2D" type="Control" unique_id=1258725667]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_rjlel")
+data = SubResource("Resource_gj5rp")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2060004996]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2092785781]
+shape = SubResource("RectangleShape2D_gj5rp")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1291316459]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+expand_mode = 1
+stretch_mode = 5

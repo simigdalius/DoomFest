@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://dr8mgty4e1qu1"]
+
+[ext_resource type="Script" uid="uid://beob4vu6mrcfp" path="res://charactersscenes/enemystats.gd" id="1_44kvc"]
+[ext_resource type="Texture2D" uid="uid://b7redps8uxfo7" path="res://assets/playerstats/2026-09-14-144102-Drawing 27.png" id="1_ssafw"]
+[ext_resource type="Texture2D" uid="uid://qxmwo8806s41" path="res://assets/enemystats/2026-09-14-144304-Health.png" id="2_44kvc"]
+[ext_resource type="Script" uid="uid://dyp13oouw1qtw" path="res://enemyweaknesses/enemyweakness.gd" id="2_ffe6m"]
+[ext_resource type="Resource" uid="uid://tikta17f0sii" path="res://enemyweaknesses/weak1.tres" id="3_8lowd"]
+[ext_resource type="Texture2D" uid="uid://wievhf111npg" path="res://assets/enemystats/2026-09-14-144256-Weakness .png" id="4_h7ujr"]
+[ext_resource type="Resource" uid="uid://dmn6tlx5tws50" path="res://enemyweaknesses/weak2.tres" id="4_johx6"]
+[ext_resource type="Resource" uid="uid://cmcr7s7xyjqmd" path="res://enemyweaknesses/weak3.tres" id="5_o5tta"]
+[ext_resource type="Texture2D" uid="uid://dvocmuieno6mh" path="res://assets/enemystats/2026-09-14-144309-Healthbar (2).png" id="5_rea7w"]
+[ext_resource type="Resource" uid="uid://crxgqshlmmlhy" path="res://enemyweaknesses/weak4.tres" id="6_g8cr1"]
+[ext_resource type="Texture2D" uid="uid://c16rqvwu3ngp4" path="res://assets/enemystats/2026-09-14-144314-Healthbar (6).png" id="6_h0105"]
+[ext_resource type="Texture2D" uid="uid://bf48m6q1nng0h" path="res://assets/enemystats/2026-09-14-144252-Healthbar.png" id="7_ffe6m"]
+[ext_resource type="Texture2D" uid="uid://kwdhakueepyc" path="res://assets/enemystats/2026-09-14-144237-Drawing 24 (2).png" id="14_8lowd"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8lowd"]
+texture = ExtResource("1_ssafw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_johx6"]
+texture = ExtResource("2_44kvc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g8cr1"]
+texture = ExtResource("4_h7ujr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gj5rp"]
+texture = ExtResource("7_ffe6m")
+
+[node name="Control" type="Control" unique_id=2129228041]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_44kvc")
+posibleweaknes = Array[ExtResource("2_ffe6m")]([ExtResource("3_8lowd"), ExtResource("4_johx6"), ExtResource("5_o5tta"), ExtResource("6_g8cr1")])
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=780379125]
+z_index = 3
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("14_8lowd")
+
+[node name="Panel4" type="Panel" parent="." unique_id=1314614900]
+z_index = 1
+layout_mode = 0
+offset_left = 847.0
+offset_top = 140.0
+offset_right = 881.0
+offset_bottom = 158.61539
+scale = Vector2(6.5, 6.5)
+theme_override_styles/panel = SubResource("StyleBoxTexture_8lowd")
+
+[node name="healthicon" type="Panel" parent="Panel4" unique_id=837842322]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 10.0
+offset_bottom = 8.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_johx6")
+
+[node name="weakness" type="Panel" parent="Panel4" unique_id=1304538266]
+layout_mode = 0
+offset_left = 2.3076916
+offset_top = 7.8461537
+offset_right = 10.307692
+offset_bottom = 15.846153
+theme_override_styles/panel = SubResource("StyleBoxTexture_g8cr1")
+
+[node name="front" type="TextureProgressBar" parent="Panel4" unique_id=1278701794]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 2.0
+offset_right = 31.0
+offset_bottom = 7.0
+texture_under = ExtResource("6_h0105")
+texture_progress = ExtResource("5_rea7w")
+
+[node name="Panel" type="Panel" parent="Panel4" unique_id=439511885]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 2.0
+offset_right = 32.0
+offset_bottom = 7.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_gj5rp")

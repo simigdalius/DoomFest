@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="EnemyMove" format=3 uid="uid://cpkhcoy8dwk6j"]
+
+[ext_resource type="Script" uid="uid://dgjt2wxp8rhw4" path="res://assets/enemymove/enemymove.gd" id="1_6oo4o"]
+[ext_resource type="Texture2D" uid="uid://bxm22nfrqs2hf" path="res://assets/enemymove/fruitwrong.png" id="2_6q5je"]
+
+[resource]
+script = ExtResource("1_6oo4o")
+nothing = 1
+texture = ExtResource("2_6q5je")

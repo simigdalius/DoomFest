@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://bp7yisx37vhab"]
+
+[ext_resource type="Script" uid="uid://dox4rg25uuqlo" path="res://cardstats/CardData.gd" id="1_4lvlw"]
+[ext_resource type="Texture2D" uid="uid://b7irsyrsni6ds" path="res://assets/cardassets/attackfirecard.png" id="2_ggyan"]
+
+[resource]
+script = ExtResource("1_4lvlw")
+card_name = "fire"
+DAMAGE = 30
+texture = ExtResource("2_ggyan")
+metadata/_custom_type_script = "uid://dox4rg25uuqlo"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://bl4qx3nhws88b"]
+
+[ext_resource type="Script" uid="uid://dox4rg25uuqlo" path="res://cardstats/CardData.gd" id="1_o8i1t"]
+[ext_resource type="Texture2D" uid="uid://de7om34pvts7s" path="res://assets/cardassets/shufflecard.png" id="2_ofa0t"]
+
+[resource]
+script = ExtResource("1_o8i1t")
+card_name = "shuffle"
+BUFF = 1
+texture = ExtResource("2_ofa0t")
+metadata/_custom_type_script = "uid://dox4rg25uuqlo"

@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://bpeaeitakkjph"]
+
+[ext_resource type="Texture2D" uid="uid://c261nr7k3vfjk" path="res://assets/uiassets/2026-09-14-145323-Drawing 12 (4).png" id="1_7xb6j"]
+[ext_resource type="Script" uid="uid://d2ei6owka0wo4" path="res://uiScenes/story.gd" id="1_pvdei"]
+[ext_resource type="Texture2D" uid="uid://406wv17unmt" path="res://assets/uiassets/2026-09-14-145332-Drawing 12 (5).png" id="2_pvdei"]
+[ext_resource type="Texture2D" uid="uid://mosg72txomv6" path="res://assets/uiassets/2026-09-14-145327-Drawing 12 (6).png" id="4_5rbmd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x3xfl"]
+bg_color = Color(0.35686275, 0.40392157, 0.54901963, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5rbmd"]
+texture = ExtResource("1_7xb6j")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bqbvl"]
+texture = ExtResource("1_7xb6j")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_81snc"]
+texture = ExtResource("2_pvdei")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gj5rp"]
+texture = ExtResource("4_5rbmd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m3xxw"]
+texture = ExtResource("1_7xb6j")
+
+[node name="Control" type="Control" unique_id=1787780957]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pvdei")
+
+[node name="Panel" type="Panel" parent="." unique_id=2062799235]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_x3xfl")
+
+[node name="Button2" type="Button" parent="." unique_id=822205903]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 512.0
+offset_right = 480.0
+offset_bottom = 602.0
+theme_override_colors/font_color = Color(0.8745098, 0.6156863, 0.8745098, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.31088313, 6.540969e-05, 0.31101242, 1)
+theme_override_colors/icon_pressed_color = Color(0.8745098, 0.6156863, 0.8745098, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_5rbmd")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_bqbvl")
+theme_override_styles/hover = SubResource("StyleBoxTexture_81snc")
+text = "tutorial"
+
+[node name="Button3" type="Button" parent="." unique_id=1806526079]
+layout_mode = 0
+offset_left = 664.0
+offset_top = 512.0
+offset_right = 920.0
+offset_bottom = 602.0
+theme_override_colors/font_color = Color(0.8745098, 0.6156863, 0.8745098, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.31088313, 6.540969e-05, 0.31101242, 1)
+theme_override_colors/icon_pressed_color = Color(0.8745098, 0.6156863, 0.8745098, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_5rbmd")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_bqbvl")
+theme_override_styles/hover = SubResource("StyleBoxTexture_81snc")
+text = "play"
+
+[node name="Panel2" type="Panel" parent="." unique_id=1647541143]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 40.0
+offset_right = 1101.0
+offset_bottom = 496.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_gj5rp")
+
+[node name="Label" type="Label" parent="Panel2" unique_id=1416774727]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 117.0
+offset_right = 965.0
+offset_bottom = 407.0
+theme_override_colors/font_color = Color(0.30980393, 0, 0.30980393, 1)
+theme_override_font_sizes/font_size = 20
+text = "Hello Younickious,
+
+I see you came here to see if you're worthy of a place at the top of our evil world. 
+Do you really think you can cause what human beings call \"imminent doom,\"
+or will you be the one to drown in it?
+
+Okay then... let's go to the arena and see what you've got."
+
+[node name="Panel3" type="Panel" parent="." unique_id=511576167]
+layout_mode = 0
+offset_left = 306.0
+offset_top = 13.0
+offset_right = 844.0
+offset_bottom = 137.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_m3xxw")
+
+[node name="Label" type="Label" parent="Panel3" unique_id=1925613761]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 12.0
+offset_right = 495.0
+offset_bottom = 109.0
+theme_override_font_sizes/font_size = 30
+text = "Welcome to DoomFest"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

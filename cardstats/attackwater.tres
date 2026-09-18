@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://bgopf0kh3w0ur"]
+
+[ext_resource type="Script" uid="uid://dox4rg25uuqlo" path="res://cardstats/CardData.gd" id="1_6816l"]
+[ext_resource type="Texture2D" uid="uid://c4ffcnclowpys" path="res://assets/cardassets/attackwatercard.png" id="2_4pn38"]
+
+[resource]
+script = ExtResource("1_6816l")
+card_name = "water"
+DAMAGE = 30
+texture = ExtResource("2_4pn38")
+metadata/_custom_type_script = "uid://dox4rg25uuqlo"

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" format=3 uid="uid://dmn6tlx5tws50"]
+
+[ext_resource type="Script" uid="uid://dyp13oouw1qtw" path="res://enemyweaknesses/enemyweakness.gd" id="1_1ch0o"]
+[ext_resource type="Texture2D" uid="uid://udyjmt4fp8xg" path="res://assets/enemystats/2026-09-14-144232-Drawing 24.png" id="2_y1ykc"]
+
+[resource]
+script = ExtResource("1_1ch0o")
+weakness = 2
+texture = ExtResource("2_y1ykc")

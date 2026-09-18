@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://c18mm21ycck0g"]
+
+[ext_resource type="Script" uid="uid://dox4rg25uuqlo" path="res://cardstats/CardData.gd" id="1_3frcd"]
+[ext_resource type="Texture2D" uid="uid://fytgd38g8o2p" path="res://assets/cardassets/backofcard.png" id="2_od0xm"]
+
+[resource]
+script = ExtResource("1_3frcd")
+card_name = "back"
+texture = ExtResource("2_od0xm")
+metadata/_custom_type_script = "uid://dox4rg25uuqlo"
