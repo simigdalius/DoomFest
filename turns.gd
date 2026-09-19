@@ -8,7 +8,7 @@ var current_turn: Turn = Turn.PLAYER
 var cards_allowed_this_turn: int = 1
 var cards_played_this_turn: int = 0
 
-func is_player_turn() -> bool:
+func is_player_turn() -> bool: 
 	return current_turn == Turn.PLAYER
 
 func start_player_turn() -> void:
@@ -33,3 +33,12 @@ func card_played() -> void:
 func start_new_battle() -> void:
 	EventBus.enemy_spawned.emit()
 	start_player_turn()
+
+
+func reset_all_turns() -> void:
+	current_turn = Turn.PLAYER      
+	cards_allowed_this_turn = 1     
+	cards_played_this_turn = 0    
+	turn_changed.emit(true)          
+	print("turn states reset successfully!")
+	

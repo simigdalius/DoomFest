@@ -3,6 +3,7 @@ extends Node2D
 @onready var label: Label = $Label
 
 func _ready() -> void:
+	add_to_group("popups")
 	$AnimatedSprite2D.hide()
 
 func setup(value: int, is_heal: bool = false) -> void:
@@ -23,10 +24,10 @@ func setup(value: int, is_heal: bool = false) -> void:
 		 .set_trans(Tween.TRANS_CUBIC)\
 		 .set_ease(Tween.EASE_OUT)
 	
-	# 2. Fade out (γίνεται διαφανές στο τέλος)
 	tween.tween_property(self, "modulate:a", 0.0, 0.9)\
 		 .set_trans(Tween.TRANS_LINEAR)\
 		 .set_ease(Tween.EASE_IN)
 	
 	await tween.finished
-	queue_free()
+	if is_inside_tree():
+		queue_free()

@@ -23,6 +23,14 @@ func t():
 
 func _on_button_4_pressed() -> void:
 	get_tree().paused = false
+	
+	var tweens = get_tree().get_processed_tweens()
+	for t in tweens:
+		if t and t.is_valid():
+			t.kill()
+	get_tree().call_group("popups", "queue_free")
+	EventBus.reset_all_states()
+	Turns.reset_all_turns()
 	get_tree().change_scene_to_file("res://uiScenes/mainmenu.tscn")
 
 

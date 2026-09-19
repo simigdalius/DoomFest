@@ -816,9 +816,6 @@ position = Vector2(576, 320)
 [node name="Node2D4" parent="." unique_id=1420620309 instance=ExtResource("36_dbnxn")]
 position = Vector2(584, 256)
 
-[node name="Control3" parent="." unique_id=2133262921 instance=ExtResource("37_6igc2")]
-visible = false
-
 [node name="Node2D5" parent="." unique_id=103059166 instance=ExtResource("37_v2gmw")]
 position = Vector2(0, -40)
 
@@ -1019,7 +1016,12 @@ texture = ExtResource("47_svynb")
 [node name="AudioStreamPlayer" parent="." unique_id=1709012857 instance=ExtResource("48_rau6s")]
 
 [node name="AudioStreamPlayer2" parent="." unique_id=433213751 instance=ExtResource("51_g3ire")]
-stream_paused = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=875825659]
+layer = 3
+
+[node name="Control3" parent="CanvasLayer" unique_id=2133262921 instance=ExtResource("37_6igc2")]
+visible = false
 
 [connection signal="timeout" from="Timer" to="enemyturn" method="_on_timer_timeout"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

@@ -29,3 +29,9 @@ func update_score(new_score: int) -> void:
 
 var buff_attack_turns: int = 0
 var buff: bool = false
+func reset_all_states() -> void:
+	buff_attack_turns = 0
+	current_weakness = null
+	buff = false
+	final_score = 0
+	print("EventBus states reset successfully!")

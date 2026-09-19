@@ -13,6 +13,9 @@ func _ready() -> void:
 	EventBus.pop.connect(_on_pop_requested)
 
 func _on_turn_changed(is_player_turn: bool) -> void:
+	if not is_inside_tree():
+		return
+		
 	if not is_player_turn:
 		play_enemy_turn()
 
@@ -22,16 +25,23 @@ func play_enemy_turn() -> void:
 	clear_current_moves()
 	
 	await start_rotation_sequence()
+	if not is_inside_tree(): return # Safety check
 	
 	$froutakia.play("run")
 	$"../Timer".start()
 	$AudioStreamPlayer2.play()
 	
 	await $"../Timer".timeout
+	if not is_inside_tree(): return # Safety check
+	
 	$AudioStreamPlayer2.stop()
+	
 	await generate_random_moves(3)
+	if not is_inside_tree(): return # Safety check
 
 	await get_tree().create_timer(1.0).timeout
+	if not is_inside_tree(): return # Safety check
+	
 	Turns.start_player_turn()
 
 func generate_random_moves(amount: int) -> void:
@@ -42,6 +52,8 @@ func generate_random_moves(amount: int) -> void:
 	var total_attack: int = 0
 
 	for i in range(amount):
+		if not is_inside_tree(): return # Safety check μέσα στο loop
+		
 		var random_move: EnemyMove = possible_moves.pick_random()
 		
 		var new_move_node = ENEMY_MOVE_SCENE.instantiate()
@@ -68,19 +80,23 @@ func generate_random_moves(amount: int) -> void:
 			.set_ease(Tween.EASE_OUT)
 
 		await tween.finished
+		if not is_inside_tree(): return
+		
 		await get_tree().create_timer(0.15).timeout
+		if not is_inside_tree(): return
 
 	if total_health > 0:
 		var final_health = 0
-		if total_health==1:
-			final_health=10
-		elif total_health==2:
-			final_health=20
-		elif total_health==3:
-			final_health=35
+		if total_health == 1:
+			final_health = 10
+		elif total_health == 2:
+			final_health = 20
+		elif total_health == 3:
+			final_health = 35
 		print("Πρόσθεση ", final_health, " health στον εχθρό!")
 		EventBus.pop.emit(final_health, Vector2(730, 230), true)
 		EventBus.enemy_healed.emit(final_health)
+
 	if total_attack > 0:
 		var final_damage = 0
 		if total_attack == 1:
@@ -93,7 +109,7 @@ func generate_random_moves(amount: int) -> void:
 		print("Επίθεση εχθρού για ", final_damage, " dmg!")
 		EventBus.pop.emit(final_damage, Vector2(430, 230), false)
 		EventBus.enemy_attacked.emit(final_damage)
-		
+
 func clear_current_moves() -> void:
 	for child in get_children():
 		if child is Control and child != $froutakia and child != $kouloxeris:
