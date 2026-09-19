@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://b0potvd4l4ki"]
+
+[ext_resource type="Texture2D" uid="uid://bu5b4ncigt8r3" path="res://assets/playerstats/popup.png" id="1_4sxji"]
+[ext_resource type="Script" uid="uid://ccaw8uwowwmbh" path="res://ingamescenes/popup.gd" id="1_sxmci"]
+[ext_resource type="FontFile" uid="uid://2s3ok1caketm" path="res://assets/Asteroid Blaster.ttf" id="3_jo0vj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vjmi"]
+atlas = ExtResource("1_4sxji")
+region = Rect2(0, 0, 32, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxmci"]
+atlas = ExtResource("1_4sxji")
+region = Rect2(32, 0, 32, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jo0vj"]
+atlas = ExtResource("1_4sxji")
+region = Rect2(64, 0, 32, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blxgo"]
+atlas = ExtResource("1_4sxji")
+region = Rect2(96, 0, 32, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfmfo"]
+atlas = ExtResource("1_4sxji")
+region = Rect2(128, 0, 32, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnjsf"]
+atlas = ExtResource("1_4sxji")
+region = Rect2(0, 24, 32, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gj5rp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vjmi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxmci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jo0vj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blxgo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jfmfo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hnjsf")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=1420620309]
+scale = Vector2(3, 3)
+script = ExtResource("1_sxmci")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=563419294]
+scale = Vector2(1.3, 1.3)
+sprite_frames = SubResource("SpriteFrames_gj5rp")
+autoplay = "default"
+frame = 2
+frame_progress = 0.67173547
+
+[node name="Label" type="Label" parent="." unique_id=1216189535]
+offset_left = -10.0
+offset_top = -2.0
+offset_right = 30.0
+offset_bottom = 21.0
+theme_override_colors/font_outline_color = Color(0.5214742, 0.040668815, 0.5358347, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("3_jo0vj")

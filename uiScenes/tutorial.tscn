@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c1h1kjns1jmc0" path="res://assets/cardassets/attackneutralcard.png" id="5_4axam"]
 [ext_resource type="Texture2D" uid="uid://bxm22nfrqs2hf" path="res://assets/enemymove/fruitwrong.png" id="5_gbarc"]
 [ext_resource type="Texture2D" uid="uid://c4ffcnclowpys" path="res://assets/cardassets/attackwatercard.png" id="6_1lr8p"]
+[ext_resource type="FontFile" uid="uid://2s3ok1caketm" path="res://assets/Asteroid Blaster.ttf" id="7_g40m0"]
 [ext_resource type="Texture2D" uid="uid://de7om34pvts7s" path="res://assets/cardassets/shufflecard.png" id="7_v5yvy"]
 [ext_resource type="Texture2D" uid="uid://dkgq5ffr7hr5r" path="res://assets/cardassets/balladercard.png" id="8_hvspf"]
 [ext_resource type="Texture2D" uid="uid://bb5vq7ylbfyl" path="res://assets/cardassets/attackaircard.png" id="9_h0lln"]
@@ -657,10 +658,11 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_r7eh0")
 
 [node name="Label" type="Label" parent="Panel3" unique_id=90639162]
 layout_mode = 0
-offset_left = 96.0
-offset_top = -8.0
-offset_right = 270.0
-offset_bottom = 89.0
+offset_left = 95.0
+offset_top = 1.0
+offset_right = 269.0
+offset_bottom = 98.0
+theme_override_fonts/font = ExtResource("7_g40m0")
 theme_override_font_sizes/font_size = 30
 text = "Doom-torial"
 horizontal_alignment = 1
@@ -676,7 +678,8 @@ theme_override_colors/font_color = Color(0.8745098, 0.6156863, 0.8745098, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.31088313, 6.540969e-05, 0.31101242, 1)
 theme_override_colors/icon_pressed_color = Color(0.8745098, 0.6156863, 0.8745098, 1)
 theme_override_constants/outline_size = 2
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("7_g40m0")
+theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxTexture_katwf")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_tbea5")
 theme_override_styles/hover = SubResource("StyleBoxTexture_iw2l4")
@@ -692,22 +695,25 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_gj5rp")
 
 [node name="Label" type="Label" parent="Panel4" unique_id=471610689]
 layout_mode = 0
-offset_left = 32.0
+offset_left = 5.0
 offset_top = 8.0
 offset_right = 256.0
 offset_bottom = 56.0
 theme_override_colors/font_color = Color(0.30980393, 0, 0.30980393, 1)
+theme_override_fonts/font = ExtResource("7_g40m0")
+theme_override_font_sizes/font_size = 20
 text = "ON YOUR TURN"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="Panel4" unique_id=718223500]
 layout_mode = 0
-offset_left = -6.0
-offset_top = 112.0
+offset_left = -16.0
+offset_top = 124.0
 offset_right = 108.0
-offset_bottom = 171.0
+offset_bottom = 183.0
 theme_override_colors/font_color = Color(0.30980393, 0, 0.30980393, 1)
+theme_override_fonts/font = ExtResource("7_g40m0")
 theme_override_font_sizes/font_size = 20
 text = "Attack card
 "
@@ -767,33 +773,36 @@ text = "buffs next 3 attacks"
 
 [node name="Label6" type="Label" parent="Panel4" unique_id=60225615]
 layout_mode = 0
-offset_left = -8.0
-offset_top = 212.0
-offset_right = 272.0
-offset_bottom = 271.0
+offset_left = -16.0
+offset_top = 221.0
+offset_right = 264.0
+offset_bottom = 280.0
 theme_override_colors/font_color = Color(0.30980393, 0, 0.30980393, 1)
+theme_override_fonts/font = ExtResource("7_g40m0")
 theme_override_font_sizes/font_size = 20
 text = "Heal card
 "
 
 [node name="Label7" type="Label" parent="Panel4" unique_id=1379919208]
 layout_mode = 0
-offset_left = -8.0
-offset_top = 276.0
-offset_right = 88.0
-offset_bottom = 335.0
+offset_left = -18.0
+offset_top = 286.0
+offset_right = 79.0
+offset_bottom = 345.0
 theme_override_colors/font_color = Color(0.30980393, 0, 0.30980393, 1)
+theme_override_fonts/font = ExtResource("7_g40m0")
 theme_override_font_sizes/font_size = 20
 text = "Buff card
 "
 
 [node name="Label8" type="Label" parent="Panel4" unique_id=496197103]
 layout_mode = 0
-offset_left = -8.0
-offset_top = 340.0
-offset_right = 154.0
-offset_bottom = 399.0
+offset_left = -16.0
+offset_top = 347.0
+offset_right = 146.0
+offset_bottom = 406.0
 theme_override_colors/font_color = Color(0.30980393, 0, 0.30980393, 1)
+theme_override_fonts/font = ExtResource("7_g40m0")
 theme_override_font_sizes/font_size = 20
 text = "Shuffle card
 "
@@ -812,11 +821,12 @@ one random card"
 
 [node name="Label10" type="Label" parent="Panel4" unique_id=259191189]
 layout_mode = 0
-offset_left = -8.0
-offset_top = 404.0
-offset_right = 130.0
-offset_bottom = 463.0
+offset_left = -15.0
+offset_top = 412.0
+offset_right = 123.0
+offset_bottom = 471.0
 theme_override_colors/font_color = Color(0.30980393, 0, 0.30980393, 1)
+theme_override_fonts/font = ExtResource("7_g40m0")
 theme_override_font_sizes/font_size = 20
 text = "Doom card
 "
@@ -871,6 +881,8 @@ offset_top = 8.0
 offset_right = 248.0
 offset_bottom = 56.0
 theme_override_colors/font_color = Color(0.30980393, 0, 0.30980393, 1)
+theme_override_fonts/font = ExtResource("7_g40m0")
+theme_override_font_sizes/font_size = 20
 text = "ENEMY TURN"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -890,6 +902,8 @@ offset_top = 8.0
 offset_right = 256.0
 offset_bottom = 56.0
 theme_override_colors/font_color = Color(0.30980393, 0, 0.30980393, 1)
+theme_override_fonts/font = ExtResource("7_g40m0")
+theme_override_font_sizes/font_size = 20
 text = "STATS"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1046,11 +1060,13 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_gj5rp")
 
 [node name="Label" type="Label" parent="Panel9" unique_id=1792193879]
 layout_mode = 0
-offset_left = 32.0
+offset_left = 10.0
 offset_top = 8.0
 offset_right = 248.0
 offset_bottom = 56.0
 theme_override_colors/font_color = Color(0.30980393, 0, 0.30980393, 1)
+theme_override_fonts/font = ExtResource("7_g40m0")
+theme_override_font_sizes/font_size = 20
 text = "TIMER"
 horizontal_alignment = 1
 vertical_alignment = 1

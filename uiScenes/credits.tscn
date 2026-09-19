@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://pwxvyj7qit8i" path="res://uiScenes/credits.gd" id="1_njv6p"]
 [ext_resource type="Texture2D" uid="uid://c0ju8cdd26sno" path="res://assets/uiassets/2026-09-14-145338-Drawing 9 (7).png" id="1_wxjq0"]
 [ext_resource type="Texture2D" uid="uid://da8be7lbf4xmv" path="res://assets/uiassets/2026-09-14-145343-Drawing 9 (8).png" id="2_njv6p"]
+[ext_resource type="Texture2D" uid="uid://mosg72txomv6" path="res://assets/uiassets/2026-09-14-145327-Drawing 12 (6).png" id="4_iucia"]
+[ext_resource type="FontFile" uid="uid://2s3ok1caketm" path="res://assets/Asteroid Blaster.ttf" id="5_frbg7"]
+[ext_resource type="Texture2D" uid="uid://c261nr7k3vfjk" path="res://assets/uiassets/2026-09-14-145323-Drawing 12 (4).png" id="6_3pwj0"]
+[ext_resource type="Texture2D" uid="uid://1x474msu3skj" path="res://assets/uiassets/2026-09-14-145349-Idle (2).png" id="7_frbg7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spaey"]
 bg_color = Color(0.35686275, 0.40392157, 0.54901963, 1)
@@ -15,6 +19,15 @@ texture = ExtResource("1_wxjq0")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iucia"]
 texture = ExtResource("2_njv6p")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6nil0"]
+texture = ExtResource("4_iucia")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j47ar"]
+texture = ExtResource("6_3pwj0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pb0aa"]
+texture = ExtResource("6_3pwj0")
 
 [node name="Control" type="Control" unique_id=1280431086]
 layout_mode = 3
@@ -43,5 +56,101 @@ offset_bottom = 88.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_epkes")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ejy8j")
 theme_override_styles/hover = SubResource("StyleBoxTexture_iucia")
+
+[node name="Panel2" type="Panel" parent="." unique_id=671600551]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 123.0
+offset_right = 1105.0
+offset_bottom = 579.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_6nil0")
+
+[node name="Label" type="Label" parent="Panel2" unique_id=2014872995]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 117.0
+offset_right = 965.0
+offset_bottom = 207.0
+theme_override_colors/font_color = Color(0.30980393, 0, 0.30980393, 1)
+theme_override_constants/line_spacing = 8
+theme_override_fonts/font = ExtResource("5_frbg7")
+theme_override_font_sizes/font_size = 20
+text = "A game made by simigdalius
+Game Design/Programming, Art/Sprites
+Sfx sounds:
+Music:
+fonts: Asteroid blaster from dafont.com
+Game engine was Godot and assets made with pixel brush"
+horizontal_alignment = 1
+
+[node name="Panel3" type="Panel" parent="." unique_id=1602326406]
+layout_mode = 0
+offset_left = 310.0
+offset_top = 96.0
+offset_right = 848.0
+offset_bottom = 220.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_j47ar")
+
+[node name="Label" type="Label" parent="Panel3" unique_id=2064513701]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 12.0
+offset_right = 495.0
+offset_bottom = 109.0
+theme_override_fonts/font = ExtResource("5_frbg7")
+theme_override_font_sizes/font_size = 30
+text = "CREDITS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel4" type="Panel" parent="." unique_id=443700334]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 416.0
+offset_right = 778.0
+offset_bottom = 504.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_pb0aa")
+
+[node name="Label" type="Label" parent="Panel4" unique_id=825163563]
+layout_mode = 0
+offset_left = 16.0
+offset_right = 384.0
+offset_bottom = 97.0
+theme_override_fonts/font = ExtResource("5_frbg7")
+theme_override_font_sizes/font_size = 30
+text = "FIND ME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="." unique_id=1593093139]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 512.0
+offset_right = 999.0
+offset_bottom = 602.0
+theme_override_colors/font_color = Color(0.30980393, 0, 0.30980393, 1)
+theme_override_constants/line_spacing = 6
+theme_override_fonts/font = ExtResource("5_frbg7")
+theme_override_font_sizes/font_size = 20
+text = "Discord: simigdali                 Github: simigdalius"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=883872632]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 536.0
+offset_right = 999.0
+offset_bottom = 626.0
+theme_override_colors/font_color = Color(0.30980393, 0, 0.30980393, 1)
+theme_override_constants/line_spacing = 6
+theme_override_fonts/font = ExtResource("5_frbg7")
+theme_override_font_sizes/font_size = 16
+text = "Special thanks to NIcky and geolgr"
+horizontal_alignment = 1
+
+[node name="20260914145349Idle(2)" type="Sprite2D" parent="." unique_id=1166943791]
+position = Vector2(584, 104)
+scale = Vector2(5, 5)
+texture = ExtResource("7_frbg7")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

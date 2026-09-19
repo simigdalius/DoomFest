@@ -1,5 +1,5 @@
 extends Node2D
-
+var floating_text_scene = preload("res://ingamescenes/popup.tscn")
 @export var max_hp: int = 100
 var current_hp: int = 100
 
@@ -63,7 +63,7 @@ func _on_player_attacked(damage: int, element_id: int) -> void:
 func _on_enemy_death() -> void:
 	print("Ο εχθρός πέθανε!")
 	sprite.play("death")
-	
+	EventBus.tzoub.emit(15, 0.4)
 	var tween = create_tween()
 	tween.tween_property(sprite, "position:x", sprite.position.x - 20, 0.1)
 	tween.tween_property(sprite, "position:x", sprite.position.x, 0.1)
@@ -74,6 +74,7 @@ func _on_enemy_death() -> void:
 func _on_enemy_healed(amount: int) -> void:
 	print("Ο εχθρός δέχθηκε θεραπεία: ", amount)
 	sprite.play("health")
+	EventBus.tzoub.emit(4, 0.4)
 	var tween = create_tween()
 	tween.tween_property(sprite, "position:x", sprite.position.x - 0.1, 0.1)
 	tween.tween_property(sprite, "position:x", sprite.position.x, 0.1)
@@ -83,6 +84,7 @@ func _on_enemy_healed(amount: int) -> void:
 func _on_enemy_attack(amount: int) -> void:
 	print("Ο εχθρός έκανε επίθεση με damage: ", amount)
 	sprite.play("attack")
+	EventBus.tzoub.emit(15, 0.4)
 	var tween = create_tween()
 	tween.tween_property(sprite, "position:x", sprite.position.x - 20, 0.1)
 	tween.tween_property(sprite, "position:x", sprite.position.x, 0.1)

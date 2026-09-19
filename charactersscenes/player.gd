@@ -22,6 +22,7 @@ func _ready() -> void:
 
 func _on_buffed(buff_type: int) -> void:
 	sprite.play("buff")
+	EventBus.tzoub.emit(4, 0.4)
 	var tween = create_tween()
 	tween.tween_property(sprite, "position:x", sprite.position.x + 5.0, 0.1)
 	tween.tween_property(sprite, "position:x", sprite.position.x, 0.1)
@@ -48,6 +49,7 @@ func _on_buffed(buff_type: int) -> void:
 # 1. Θεραπεία Παίκτη
 func _on_healed(amount: int) -> void:
 	sprite.play("health")
+	EventBus.tzoub.emit(4, 0.4)
 	current_hp = clamp(current_hp + amount, 0, max_hp)
 	print("Ο Παίκτης θεραπεύτηκε! HP: ", current_hp)
 	
@@ -61,6 +63,7 @@ func _on_healed(amount: int) -> void:
 # 2. Επίθεση Παίκτη
 func _on_player_attack(damage: int, _element_id: int) -> void:
 	sprite.play("attack")
+	EventBus.tzoub.emit(15, 0.4)
 	var tween = create_tween()
 	tween.tween_property(sprite, "position:x", sprite.position.x + 20.0, 0.1)
 	tween.tween_property(sprite, "position:x", sprite.position.x, 0.1)
@@ -103,7 +106,7 @@ func _on_turn_changed(is_player_turn: bool) -> void:
 func _on_player_death() -> void:
 	print("Game Over! Ο Παίκτης ηττήθηκε.")
 	sprite.play("death")
-	
+	EventBus.tzoub.emit(15, 0.4)
 	var tween = create_tween()
 	tween.tween_property(sprite, "position:x", sprite.position.x - 20.0, 0.1)
 	tween.tween_property(sprite, "position:x", sprite.position.x, 0.1)

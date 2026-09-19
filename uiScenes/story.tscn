@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c261nr7k3vfjk" path="res://assets/uiassets/2026-09-14-145323-Drawing 12 (4).png" id="1_7xb6j"]
 [ext_resource type="Script" uid="uid://d2ei6owka0wo4" path="res://uiScenes/story.gd" id="1_pvdei"]
+[ext_resource type="FontFile" uid="uid://2s3ok1caketm" path="res://assets/Asteroid Blaster.ttf" id="2_bqbvl"]
 [ext_resource type="Texture2D" uid="uid://406wv17unmt" path="res://assets/uiassets/2026-09-14-145332-Drawing 12 (5).png" id="2_pvdei"]
 [ext_resource type="Texture2D" uid="uid://mosg72txomv6" path="res://assets/uiassets/2026-09-14-145327-Drawing 12 (6).png" id="4_5rbmd"]
 
@@ -51,7 +52,8 @@ theme_override_colors/font_color = Color(0.8745098, 0.6156863, 0.8745098, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.31088313, 6.540969e-05, 0.31101242, 1)
 theme_override_colors/icon_pressed_color = Color(0.8745098, 0.6156863, 0.8745098, 1)
 theme_override_constants/outline_size = 2
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("2_bqbvl")
+theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxTexture_5rbmd")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_bqbvl")
 theme_override_styles/hover = SubResource("StyleBoxTexture_81snc")
@@ -67,7 +69,8 @@ theme_override_colors/font_color = Color(0.8745098, 0.6156863, 0.8745098, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.31088313, 6.540969e-05, 0.31101242, 1)
 theme_override_colors/icon_pressed_color = Color(0.8745098, 0.6156863, 0.8745098, 1)
 theme_override_constants/outline_size = 2
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("2_bqbvl")
+theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxTexture_5rbmd")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_bqbvl")
 theme_override_styles/hover = SubResource("StyleBoxTexture_81snc")
@@ -88,6 +91,8 @@ offset_top = 117.0
 offset_right = 965.0
 offset_bottom = 407.0
 theme_override_colors/font_color = Color(0.30980393, 0, 0.30980393, 1)
+theme_override_constants/line_spacing = 8
+theme_override_fonts/font = ExtResource("2_bqbvl")
 theme_override_font_sizes/font_size = 20
 text = "Hello Younickious,
 
@@ -111,6 +116,7 @@ offset_left = 38.0
 offset_top = 12.0
 offset_right = 495.0
 offset_bottom = 109.0
+theme_override_fonts/font = ExtResource("2_bqbvl")
 theme_override_font_sizes/font_size = 30
 text = "Welcome to DoomFest"
 horizontal_alignment = 1

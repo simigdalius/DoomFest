@@ -1,5 +1,5 @@
 extends Control
-
+var floating_text_scene = preload("res://ingamescenes/popup.tscn")
 @export var data: CardData
 
 var is_dragging: bool = false
@@ -14,6 +14,7 @@ func _ready() -> void:
 	update_card_ui()
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
+	EventBus.pop.connect(_on_pop_requested)
 
 func update_card_ui() -> void:
 	if data == null: return
@@ -65,9 +66,11 @@ func play_card() -> void:
 	if data.get("DAMAGE") != null and data.DAMAGE > 0:
 		var element = data.get("element_id") if data.get("element_id") != null else 1
 		EventBus.player_attacked.emit(data.DAMAGE, element)
+		EventBus.pop.emit(data.DAMAGE, Vector2(730, 230), false)
 			
 	if data.get("HEAL") != null and data.HEAL > 0:
 		EventBus.player_healed.emit(data.HEAL)
+		EventBus.pop.emit(data.HEAL, Vector2(430, 230), true)
 			
 	if buff_type > 0:
 		# Στέλνουμε το buff_type (1: Shuffle, 2: Joker, 3: +10 Atk)
@@ -104,3 +107,11 @@ func _on_mouse_entered() -> void:
 func _on_mouse_exited() -> void:
 	var tween = create_tween()
 	tween.tween_property(self, "position:y", 0.0, 0.1)
+
+
+func _on_pop_requested(amount: int, pos: Vector2, is_heal: bool) -> void:
+	var pop = floating_text_scene.instantiate()
+	get_tree().root.add_child(pop)
+	pop.global_position = pos
+	pop.z_index = 100
+	pop.setup(amount, is_heal)

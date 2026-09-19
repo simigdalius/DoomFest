@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://406wv17unmt" path="res://assets/uiassets/2026-09-14-145332-Drawing 12 (5).png" id="1_earhi"]
 [ext_resource type="Script" uid="uid://crbct3bcvheuv" path="res://uiscripts/mainmenu.gd" id="1_tl3uy"]
 [ext_resource type="Texture2D" uid="uid://c261nr7k3vfjk" path="res://assets/uiassets/2026-09-14-145323-Drawing 12 (4).png" id="2_330cp"]
+[ext_resource type="FontFile" uid="uid://2s3ok1caketm" path="res://assets/Asteroid Blaster.ttf" id="2_b643c"]
 [ext_resource type="Texture2D" uid="uid://yd8mynxtnvvk" path="res://assets/uiassets/ezgif-144456a3499f64e2.png" id="4_tl3uy"]
 [ext_resource type="Texture2D" uid="uid://fytgd38g8o2p" path="res://assets/cardassets/backofcard.png" id="5_68vck"]
 
@@ -176,7 +177,8 @@ theme_override_colors/font_color = Color(0.8745098, 0.6156863, 0.8745098, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.31088313, 6.540969e-05, 0.31101242, 1)
 theme_override_colors/icon_pressed_color = Color(0.8745098, 0.6156863, 0.8745098, 1)
 theme_override_constants/outline_size = 2
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("2_b643c")
+theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxTexture_6egm5")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_27ty7")
 theme_override_styles/hover = SubResource("StyleBoxTexture_330cp")
@@ -192,7 +194,8 @@ theme_override_colors/font_color = Color(0.8745098, 0.6156863, 0.8745098, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.31088313, 6.540969e-05, 0.31101242, 1)
 theme_override_colors/icon_pressed_color = Color(0.8745098, 0.6156863, 0.8745098, 1)
 theme_override_constants/outline_size = 2
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("2_b643c")
+theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxTexture_6egm5")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_27ty7")
 theme_override_styles/hover = SubResource("StyleBoxTexture_330cp")
@@ -208,7 +211,8 @@ theme_override_colors/font_color = Color(0.8745098, 0.6156863, 0.8745098, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.31088313, 6.540969e-05, 0.31101242, 1)
 theme_override_colors/icon_pressed_color = Color(0.8745098, 0.6156863, 0.8745098, 1)
 theme_override_constants/outline_size = 2
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("2_b643c")
+theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxTexture_6egm5")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_27ty7")
 theme_override_styles/hover = SubResource("StyleBoxTexture_330cp")
@@ -226,10 +230,11 @@ frame_progress = 0.19566438
 z_index = 2
 layout_mode = 0
 offset_left = 336.0
-offset_top = 112.0
+offset_top = 128.0
 offset_right = 800.0
-offset_bottom = 167.0
+offset_bottom = 183.0
 theme_override_colors/font_color = Color(0.3159258, 7.0583745e-05, 0.31796804, 1)
+theme_override_fonts/font = ExtResource("2_b643c")
 theme_override_font_sizes/font_size = 40
 text = "DOOM FEST"
 horizontal_alignment = 1

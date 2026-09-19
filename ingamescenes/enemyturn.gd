@@ -1,7 +1,7 @@
 extends HBoxContainer
 
 const ENEMY_MOVE_SCENE = preload("res://ingamescenes/enemymove.tscn")
-
+var floating_text_scene = preload("res://ingamescenes/popup.tscn")
 signal enemy_healed(amount: int)
 signal enemy_attacked(amount: int)
 signal enemy_slept(amount: int)
@@ -10,6 +10,7 @@ signal enemy_slept(amount: int)
 
 func _ready() -> void:
 	Turns.turn_changed.connect(_on_turn_changed)
+	EventBus.pop.connect(_on_pop_requested)
 
 func _on_turn_changed(is_player_turn: bool) -> void:
 	if not is_player_turn:
@@ -58,7 +59,7 @@ func generate_random_moves(amount: int) -> void:
 			
 		print("Εχθρός Roll ", i + 1, ": ", random_move.resource_path)
 		
-		# Tween Animation εμφάνισης ΓΙΑ ΚΑΘΕ NODE ξεχωριστά μέσα στη loop
+		EventBus.tzoub.emit(7, 0.4)
 		var tween = create_tween().set_parallel(true)
 		tween.tween_property(new_move_node, "modulate:a", 1.0, 0.2)
 		tween.tween_property(new_move_node, "scale", Vector2(1.0, 1.0), 0.3)\
@@ -75,8 +76,9 @@ func generate_random_moves(amount: int) -> void:
 		elif total_health==2:
 			final_health=20
 		elif total_health==3:
-			final_health==35
+			final_health=35
 		print("Πρόσθεση ", final_health, " health στον εχθρό!")
+		EventBus.pop.emit(final_health, Vector2(730, 230), true)
 		EventBus.enemy_healed.emit(final_health)
 	if total_attack > 0:
 		var final_damage = 0
@@ -88,6 +90,7 @@ func generate_random_moves(amount: int) -> void:
 			final_damage = 35
 			
 		print("Επίθεση εχθρού για ", final_damage, " dmg!")
+		EventBus.pop.emit(final_damage, Vector2(430, 230), false)
 		EventBus.enemy_attacked.emit(final_damage)
 		
 func clear_current_moves() -> void:
@@ -114,3 +117,10 @@ func start_rotation_sequence() -> void:
 func _on_timer_timeout() -> void:
 	if not Turns.is_player_turn():
 		$froutakia.play("flash")
+
+func _on_pop_requested(amount: int, pos: Vector2, is_heal: bool) -> void:
+	var pop = floating_text_scene.instantiate()
+	get_tree().root.add_child(pop)
+	pop.global_position = pos
+	pop.z_index = 100
+	pop.setup(amount, is_heal)

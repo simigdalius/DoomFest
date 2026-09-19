@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://da8be7lbf4xmv" path="res://assets/uiassets/2026-09-14-145343-Drawing 9 (8).png" id="2_l51fi"]
 [ext_resource type="Texture2D" uid="uid://mosg72txomv6" path="res://assets/uiassets/2026-09-14-145327-Drawing 12 (6).png" id="4_4r18g"]
 [ext_resource type="Texture2D" uid="uid://c261nr7k3vfjk" path="res://assets/uiassets/2026-09-14-145323-Drawing 12 (4).png" id="5_43sw2"]
+[ext_resource type="FontFile" uid="uid://2s3ok1caketm" path="res://assets/Asteroid Blaster.ttf" id="5_43xuw"]
+[ext_resource type="Texture2D" uid="uid://1x474msu3skj" path="res://assets/uiassets/2026-09-14-145349-Idle (2).png" id="7_43xuw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spaey"]
 bg_color = Color(0.35686275, 0.40392157, 0.54901963, 1)
@@ -67,10 +69,13 @@ offset_top = 117.0
 offset_right = 965.0
 offset_bottom = 207.0
 theme_override_colors/font_color = Color(0.30980393, 0, 0.30980393, 1)
+theme_override_constants/line_spacing = 8
+theme_override_fonts/font = ExtResource("5_43xuw")
 theme_override_font_sizes/font_size = 20
 text = "Doom Fest is a card game that pushes your luck and evilness to the limit! 
 Can you help Younickious the Witch reach the top of the Doom List?
 "
+horizontal_alignment = 1
 
 [node name="Panel3" type="Panel" parent="." unique_id=340488064]
 layout_mode = 0
@@ -86,6 +91,7 @@ offset_left = 38.0
 offset_top = 12.0
 offset_right = 495.0
 offset_bottom = 109.0
+theme_override_fonts/font = ExtResource("5_43xuw")
 theme_override_font_sizes/font_size = 30
 text = "INFORMATION"
 horizontal_alignment = 1
@@ -102,9 +108,9 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_1b30g")
 [node name="Label" type="Label" parent="Panel4" unique_id=1365052954]
 layout_mode = 0
 offset_left = 16.0
-offset_top = -8.0
 offset_right = 384.0
-offset_bottom = 89.0
+offset_bottom = 97.0
+theme_override_fonts/font = ExtResource("5_43xuw")
 theme_override_font_sizes/font_size = 30
 text = "how to play"
 horizontal_alignment = 1
@@ -117,8 +123,16 @@ offset_top = 424.0
 offset_right = 999.0
 offset_bottom = 514.0
 theme_override_colors/font_color = Color(0.30980393, 0, 0.30980393, 1)
+theme_override_constants/line_spacing = 6
+theme_override_fonts/font = ExtResource("5_43xuw")
 theme_override_font_sizes/font_size = 20
 text = "Your Turn
 Hover your mouse over the card you want to play, left-click, and drag it into the arena."
+horizontal_alignment = 1
+
+[node name="20260914145349Idle(2)" type="Sprite2D" parent="." unique_id=1814136352]
+position = Vector2(584, 104)
+scale = Vector2(5, 5)
+texture = ExtResource("7_43xuw")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

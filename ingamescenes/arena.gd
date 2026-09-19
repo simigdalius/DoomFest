@@ -10,5 +10,3 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	$npc1.play("default")
 	$npc2.play("default")
-	$playersidebar/SCORE.play("default")
-	$AnimatedSprite2D.play("default")
