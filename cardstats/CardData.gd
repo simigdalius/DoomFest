@@ -6,3 +6,4 @@ extends Resource
 @export var HEAL: int
 @export var BUFF: int
 @export var texture: Texture2D
+@export var strong: int

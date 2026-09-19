@@ -101,10 +101,34 @@ horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="Panel2" unique_id=2046970076]
 layout_mode = 0
-offset_left = 66.0
-offset_top = 186.0
-offset_right = 1000.0
-offset_bottom = 271.0
+offset_left = -12.0
+offset_top = 177.0
+offset_right = 1127.0
+offset_bottom = 262.0
+theme_override_colors/font_color = Color(0.30980393, 0, 0.30980393, 1)
+theme_override_constants/line_spacing = 12
+theme_override_fonts/font = ExtResource("2_ge7u8")
+theme_override_font_sizes/font_size = 35
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="Panel2" unique_id=1620325305]
+layout_mode = 0
+offset_left = -58.0
+offset_top = 220.0
+offset_right = 1149.0
+offset_bottom = 305.0
+theme_override_colors/font_color = Color(0.30980393, 0, 0.30980393, 1)
+theme_override_constants/line_spacing = 12
+theme_override_fonts/font = ExtResource("2_ge7u8")
+theme_override_font_sizes/font_size = 35
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="Panel2" unique_id=656518423]
+layout_mode = 0
+offset_left = -61.0
+offset_top = 260.0
+offset_right = 1146.0
+offset_bottom = 298.0
 theme_override_colors/font_color = Color(0.30980393, 0, 0.30980393, 1)
 theme_override_constants/line_spacing = 12
 theme_override_fonts/font = ExtResource("2_ge7u8")
@@ -143,16 +167,16 @@ theme_override_font_sizes/font_size = 30
 text = "Thanks for playing Doom Fest !"
 
 [node name="20260914145349Idle(2)" type="Sprite2D" parent="." unique_id=1910170411]
-position = Vector2(566, 425.00003)
+position = Vector2(566.00006, 442)
 scale = Vector2(5, 5)
 texture = ExtResource("5_at1p3")
 
 [node name="Label2" type="Label" parent="." unique_id=1248429810]
 layout_mode = 0
-offset_left = 99.0
-offset_top = 300.0
-offset_right = 1064.0
-offset_bottom = 590.0
+offset_left = 90.0
+offset_top = 332.0
+offset_right = 1055.0
+offset_bottom = 406.0
 theme_override_colors/font_color = Color(0.30980393, 0, 0.30980393, 1)
 theme_override_constants/line_spacing = 12
 theme_override_fonts/font = ExtResource("2_ge7u8")

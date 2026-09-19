@@ -17,8 +17,10 @@ func _on_button_3_pressed() -> void:
 
 func checkscore():
 	if EventBus.final_score <50:
-		$Panel2/Label2.text = str("with that score you do not deserve no resurrection")
+		$Panel2/Label2.text = str("With that score, you don't deserve any resurrection!")
 	elif EventBus.final_score <100:
-		$Panel2/Label2.text = str("Eh.. could have been better")
+		$Panel2/Label2.text = str("Eh... could have been better.")
 	else:
-		$Panel2/Label2.text = str("... wait what.... how  you deserve the reseruction everyone who passes in front of you will think only 2 words imminent doom")
+		$Panel2/Label2.text = str("...Wait, what? How? You deserve resurrection!")
+		$Panel2/Label3.text = str(" Everyone who passes by you will think only two words: ")
+		$Panel2/Label4.text = str("Imminent Doom")

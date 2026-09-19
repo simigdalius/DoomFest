@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://cbf7dn8oj61sy"]
 
 [ext_resource type="Script" uid="uid://danxukp0pi4rh" path="res://charactersscenes/playerstats.gd" id="1_m3fo1"]
+[ext_resource type="FontFile" uid="uid://2s3ok1caketm" path="res://assets/Asteroid Blaster.ttf" id="2_fcka3"]
 [ext_resource type="Texture2D" uid="uid://b7redps8uxfo7" path="res://assets/playerstats/2026-09-14-144102-Drawing 27.png" id="7_jb6gv"]
 [ext_resource type="Texture2D" uid="uid://c5f72ppnmwj0i" path="res://assets/playerstats/2026-09-14-144111-Health (2).png" id="8_etogs"]
+[ext_resource type="Texture2D" uid="uid://dd23uia2bb6mr" path="res://assets/playerstats/2026-09-14-144051-Health (4).png" id="8_lmda6"]
 [ext_resource type="Texture2D" uid="uid://crbrxm57gr1qs" path="res://assets/playerstats/2026-09-14-144046-Health (3).png" id="9_2vsxv"]
 [ext_resource type="Texture2D" uid="uid://bqml0rypkp2tl" path="res://assets/playerstats/2026-09-14-144106-Healthbar (3).png" id="10_q8i41"]
 [ext_resource type="Texture2D" uid="uid://dobj0jykvybjq" path="res://assets/playerstats/2026-09-14-144041-Healthbar (5).png" id="11_t18ky"]
@@ -20,6 +22,9 @@ texture = ExtResource("9_2vsxv")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o5tta"]
 texture = ExtResource("12_yh7fk")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gj5rp"]
+texture = ExtResource("8_lmda6")
+
 [node name="Control" type="Control" unique_id=2129228041]
 layout_mode = 3
 anchors_preset = 15
@@ -36,10 +41,10 @@ script = ExtResource("1_m3fo1")
 [node name="Panel4" type="Panel" parent="." unique_id=1314614900]
 z_index = 1
 layout_mode = 0
-offset_left = 847.0
-offset_top = 140.0
-offset_right = 881.0
-offset_bottom = 158.61539
+offset_left = 848.0
+offset_top = 141.0
+offset_right = 882.0
+offset_bottom = 159.61539
 scale = Vector2(6.5, 6.5)
 theme_override_styles/panel = SubResource("StyleBoxTexture_8lowd")
 
@@ -75,3 +80,27 @@ offset_top = 2.0
 offset_right = 32.0
 offset_bottom = 7.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_o5tta")
+
+[node name="Panel" type="Panel" parent="." unique_id=475587063]
+z_index = 3
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.11800001
+anchor_bottom = 0.120000005
+offset_left = 909.0
+offset_top = 195.0
+offset_right = 813.06396
+offset_bottom = 166.23999
+theme_override_styles/panel = SubResource("StyleBoxTexture_gj5rp")
+
+[node name="Label" type="Label" parent="Panel" unique_id=91925323]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 18.0
+offset_right = 133.0
+offset_bottom = 41.0
+theme_override_colors/font_color = Color(0.53405964, 0.00018063471, 0.5252342, 1)
+theme_override_colors/font_outline_color = Color(0.30659404, 0.51685184, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_fcka3")
+text = "ACTIVE BUFF"

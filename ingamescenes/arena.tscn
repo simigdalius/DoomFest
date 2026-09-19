@@ -37,6 +37,16 @@
 [ext_resource type="PackedScene" uid="uid://clhjilmon483" path="res://charactersscenes/player.tscn" id="37_dbnxn"]
 [ext_resource type="PackedScene" uid="uid://b41fhde3jd8xb" path="res://ingamescenes/score.tscn" id="37_v2gmw"]
 [ext_resource type="PackedScene" uid="uid://drwqcdgnflrs2" path="res://charactersscenes/enemy1.tscn" id="38_6igc2"]
+[ext_resource type="Texture2D" uid="uid://c261nr7k3vfjk" path="res://assets/uiassets/2026-09-14-145323-Drawing 12 (4).png" id="38_h1fod"]
+[ext_resource type="Texture2D" uid="uid://c1h1kjns1jmc0" path="res://assets/cardassets/attackneutralcard.png" id="39_rau6s"]
+[ext_resource type="Texture2D" uid="uid://c4ffcnclowpys" path="res://assets/cardassets/attackwatercard.png" id="40_kxdei"]
+[ext_resource type="Texture2D" uid="uid://de7om34pvts7s" path="res://assets/cardassets/shufflecard.png" id="41_2rgks"]
+[ext_resource type="Texture2D" uid="uid://dkgq5ffr7hr5r" path="res://assets/cardassets/balladercard.png" id="42_g3ire"]
+[ext_resource type="Texture2D" uid="uid://bb5vq7ylbfyl" path="res://assets/cardassets/attackaircard.png" id="43_mgmsr"]
+[ext_resource type="Texture2D" uid="uid://b7irsyrsni6ds" path="res://assets/cardassets/attackfirecard.png" id="44_edlfg"]
+[ext_resource type="Texture2D" uid="uid://d21kwt2a8k8cv" path="res://assets/cardassets/attacklightningcard.png" id="45_nld25"]
+[ext_resource type="Texture2D" uid="uid://gmnyb6aor55v" path="res://assets/cardassets/healthcard.png" id="46_6vmms"]
+[ext_resource type="Texture2D" uid="uid://dehln2wkglwxu" path="res://assets/cardassets/buffcard.png" id="47_svynb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_70chr"]
 texture = ExtResource("1_sos1w")
@@ -551,6 +561,25 @@ animations = [{
 "speed": 30.0
 }]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_13bsl"]
+texture = ExtResource("38_h1fod")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_expbn"]
+texture = ExtResource("38_h1fod")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p65h4"]
+texture = ExtResource("15_prfqi")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_okqqd"]
+bg_color = Color(0.35686275, 0.40392157, 0.54901963, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7jvkj"]
+bg_color = Color(0.8066924, 0.5407396, 0.98736686, 1)
+
 [node name="Node2D" type="Node2D" unique_id=358690805]
 script = ExtResource("1_wxugo")
 
@@ -746,7 +775,6 @@ texture = ExtResource("19_iyfc3")
 offset = Vector2(0, -16)
 
 [node name="Timer" type="Timer" parent="." unique_id=755327594]
-wait_time = 3.0
 
 [node name="AnimatedSprite2D2" parent="." unique_id=901815485 instance=ExtResource("38_6igc2")]
 position = Vector2(735.99994, 332.99997)
@@ -781,5 +809,201 @@ position = Vector2(584, 256)
 visible = false
 
 [node name="Node2D5" parent="." unique_id=103059166 instance=ExtResource("37_v2gmw")]
+position = Vector2(0, -40)
+
+[node name="Button2" type="Button" parent="." unique_id=365983260]
+z_index = 1
+offset_left = 24.0
+offset_top = 397.0
+offset_right = 216.0
+offset_bottom = 453.0
+theme_override_colors/font_color = Color(0.8745098, 0.6156863, 0.8745098, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.31088313, 6.540969e-05, 0.31101242, 1)
+theme_override_colors/icon_pressed_color = Color(0.8745098, 0.6156863, 0.8745098, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("10_6khnl")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_13bsl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_expbn")
+theme_override_styles/hover = SubResource("StyleBoxTexture_p65h4")
+text = "notebook"
+
+[node name="AcceptDialog" type="AcceptDialog" parent="." unique_id=62307819]
+process_mode = 3
+oversampling_override = 1.0
+title = "notebook"
+position = Vector2i(0, 36)
+size = Vector2i(345, 420)
+borderless = true
+mouse_passthrough = true
+theme_override_constants/buttons_separation = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_okqqd")
+
+[node name="Panel" type="Panel" parent="AcceptDialog" unique_id=1656532204]
+offset_right = 345.0
+offset_bottom = 389.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7jvkj")
+
+[node name="Label2" type="Label" parent="AcceptDialog/Panel" unique_id=2017776521]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 32.0
+offset_right = 150.0
+offset_bottom = 91.0
+theme_override_colors/font_color = Color(0.30980393, 0, 0.30980393, 1)
+theme_override_fonts/font = ExtResource("10_6khnl")
+theme_override_font_sizes/font_size = 20
+text = "Attack card
+"
+
+[node name="Attackneutralcard" type="Sprite2D" parent="AcceptDialog/Panel" unique_id=304084798]
+position = Vector2(204, 100)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("39_rau6s")
+
+[node name="Attackwatercard" type="Sprite2D" parent="AcceptDialog/Panel" unique_id=1223300714]
+position = Vector2(260, 100)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("40_kxdei")
+
+[node name="Shufflecard" type="Sprite2D" parent="AcceptDialog/Panel" unique_id=379867281]
+position = Vector2(234, 280)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("41_2rgks")
+
+[node name="Balladercard" type="Sprite2D" parent="AcceptDialog/Panel" unique_id=1082444422]
+position = Vector2(234, 344)
+scale = Vector2(1.4999998, 1.4999998)
+texture = ExtResource("42_g3ire")
+
+[node name="Label3" type="Label" parent="AcceptDialog/Panel" unique_id=2147008566]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 48.0
+offset_right = 174.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(0.30980393, 0, 0.30980393, 1)
+theme_override_constants/line_spacing = -3
+theme_override_font_sizes/font_size = 12
+text = "every card deals
+more damage based
+on the enemy weakness"
+
+[node name="Label4" type="Label" parent="AcceptDialog/Panel" unique_id=1477449490]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 144.0
+offset_right = 174.0
+offset_bottom = 168.0
+theme_override_colors/font_color = Color(0.30980393, 0, 0.30980393, 1)
+theme_override_font_sizes/font_size = 12
+text = "heals the player"
+
+[node name="Label5" type="Label" parent="AcceptDialog/Panel" unique_id=11800836]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 208.0
+offset_right = 178.0
+offset_bottom = 232.0
+theme_override_colors/font_color = Color(0.30980393, 0, 0.30980393, 1)
+theme_override_font_sizes/font_size = 12
+text = "buffs next 3 attacks"
+
+[node name="Label6" type="Label" parent="AcceptDialog/Panel" unique_id=2116846218]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 129.0
+offset_right = 306.0
+offset_bottom = 188.0
+theme_override_colors/font_color = Color(0.30980393, 0, 0.30980393, 1)
+theme_override_fonts/font = ExtResource("10_6khnl")
+theme_override_font_sizes/font_size = 20
+text = "Heal card
+"
+
+[node name="Label7" type="Label" parent="AcceptDialog/Panel" unique_id=1146447867]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 194.0
+offset_right = 121.0
+offset_bottom = 253.0
+theme_override_colors/font_color = Color(0.30980393, 0, 0.30980393, 1)
+theme_override_fonts/font = ExtResource("10_6khnl")
+theme_override_font_sizes/font_size = 20
+text = "Buff card
+"
+
+[node name="Label8" type="Label" parent="AcceptDialog/Panel" unique_id=1150328781]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 255.0
+offset_right = 188.0
+offset_bottom = 314.0
+theme_override_colors/font_color = Color(0.30980393, 0, 0.30980393, 1)
+theme_override_fonts/font = ExtResource("10_6khnl")
+theme_override_font_sizes/font_size = 20
+text = "Shuffle card
+"
+
+[node name="Label9" type="Label" parent="AcceptDialog/Panel" unique_id=75379422]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 272.0
+offset_right = 185.0
+offset_bottom = 309.0
+theme_override_colors/font_color = Color(0.30980393, 0, 0.30980393, 1)
+theme_override_constants/line_spacing = -3
+theme_override_font_sizes/font_size = 12
+text = "shuffle the deck and picks
+one random card"
+
+[node name="Label10" type="Label" parent="AcceptDialog/Panel" unique_id=2081962902]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 320.0
+offset_right = 165.0
+offset_bottom = 379.0
+theme_override_colors/font_color = Color(0.30980393, 0, 0.30980393, 1)
+theme_override_fonts/font = ExtResource("10_6khnl")
+theme_override_font_sizes/font_size = 20
+text = "Doom card
+"
+
+[node name="Label11" type="Label" parent="AcceptDialog/Panel" unique_id=1064158067]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 332.0
+offset_right = 187.0
+offset_bottom = 369.0
+theme_override_colors/font_color = Color(0.30980393, 0, 0.30980393, 1)
+theme_override_constants/line_spacing = -3
+theme_override_font_sizes/font_size = 12
+text = "next turn you pick 2 cards"
+
+[node name="Attackaircard" type="Sprite2D" parent="AcceptDialog/Panel" unique_id=190632949]
+position = Vector2(180, 44)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("43_mgmsr")
+
+[node name="Attackfirecard" type="Sprite2D" parent="AcceptDialog/Panel" unique_id=1416165470]
+position = Vector2(236, 44)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("44_edlfg")
+
+[node name="Attacklightningcard" type="Sprite2D" parent="AcceptDialog/Panel" unique_id=362146935]
+position = Vector2(292, 44)
+scale = Vector2(1.499999, 1.499999)
+texture = ExtResource("45_nld25")
+
+[node name="Healthcard" type="Sprite2D" parent="AcceptDialog/Panel" unique_id=254936170]
+position = Vector2(234, 159)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("46_6vmms")
+
+[node name="Buffcard" type="Sprite2D" parent="AcceptDialog/Panel" unique_id=202738751]
+position = Vector2(234, 220)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("47_svynb")
 
 [connection signal="timeout" from="Timer" to="enemyturn" method="_on_timer_timeout"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

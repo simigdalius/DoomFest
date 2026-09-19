@@ -1,7 +1,7 @@
 extends Node
 
-var current_weakness: EnemyWeakness
-
+var current_weakness: Resource = null 
+signal weakness_changed(new_weakness)
 # Enemy Signals
 signal enemy_healed(amount: int)
 signal enemy_attacked(amount: int)
@@ -26,3 +26,6 @@ var final_score: int = 0
 
 func update_score(new_score: int) -> void:
 	final_score = new_score
+
+var buff_attack_turns: int = 0
+var buff: bool = false

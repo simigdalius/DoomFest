@@ -59,24 +59,57 @@ func play_card() -> void:
 
 	print("Παίχτηκε η κάρτα: ", data.card_name)
 	
-	# Αποθηκεύουμε τον τύπο του buff πριν κάνουμε queue_free()
 	var buff_type = data.get("BUFF") if data.get("BUFF") != null else 0
-	
-	
-	if data.get("DAMAGE") != null and data.DAMAGE > 0:
-		var element = data.get("element_id") if data.get("element_id") != null else 1
-		EventBus.player_attacked.emit(data.DAMAGE, element)
-		EventBus.pop.emit(data.DAMAGE, Vector2(730, 230), false)
-			
-	if data.get("HEAL") != null and data.HEAL > 0:
-		EventBus.player_healed.emit(data.HEAL)
-		EventBus.pop.emit(data.HEAL, Vector2(430, 230), true)
-			
-	if buff_type > 0:
-		# Στέλνουμε το buff_type (1: Shuffle, 2: Joker, 3: +10 Atk)
-		EventBus.player_buffed.emit(buff_type)
 
-	# 2. Hide / Animate
+	# 1. ΕΝΕΡΓΟΠΟΙΗΣΗ BUFF (Αν η κάρτα δίνει buff, το ενεργοποιούμε ΠΡΩΤΑ)
+	if buff_type > 0:
+		EventBus.buff_attack_turns = 3
+		EventBus.player_buffed.emit(buff_type)
+		print("Buff ενεργοποιήθηκε για 2 γύρους!")
+		EventBus.buff =true
+	if buff_type == 0:
+		EventBus.buff = false
+
+	# 2. DAMAGE LOGIC
+	if data.get("DAMAGE") != null and data.DAMAGE > 0:
+		var final_damage = data.DAMAGE
+		var card_element = data.get("element_id") if data.get("element_id") != null else 1
+		
+		# Adinamia (Weakness match)
+		if EventBus.current_weakness != null:
+			var enemy_weakness_id = EventBus.current_weakness.get("id")
+			if enemy_weakness_id == null:
+				enemy_weakness_id = EventBus.current_weakness.get("weakness")
+			
+			if data.get("strong") != null and enemy_weakness_id != null and data.strong == enemy_weakness_id:
+				final_damage += 10
+				print("WEAKNESS MATCH! Extra +10 Damage.")
+
+		# Bonus από Buff (+10 Damage)
+		if EventBus.buff_attack_turns > 0:
+			final_damage += 10
+			print("BUFF ACTIVE! Extra +10 Damage.")
+
+		EventBus.player_attacked.emit(final_damage, card_element)
+		# Pop-up Damage (κόκκινο/μη πράσινο)
+		EventBus.pop.emit(final_damage, Vector2(730, 230), false)
+
+	# 3. HEAL LOGIC
+	if data.get("HEAL") != null and data.HEAL > 0:
+		var final_heal = data.HEAL
+		
+		# Bonus από Buff (+10 Heal)
+		if EventBus.buff_attack_turns > 0:
+			final_heal += 10
+			print("BUFF ACTIVE! Extra +10 Heal.")
+
+		# Στέλνουμε το τελικό heal στον Player
+		EventBus.player_healed.emit(final_heal)
+		
+		# Pop-up Heal (πράσινο = true)
+		EventBus.pop.emit(final_heal, Vector2(430, 230), true)
+
+	# 4. ANIMATION & CLEANUP
 	var hand = get_parent()
 	if hand and hand.has_method("hide_other_cards"):
 		hand.hide_other_cards(self)
@@ -88,9 +121,12 @@ func play_card() -> void:
 	
 	await tween.finished
 	
-	# 3. Ενημέρωση του Turn Manager ΠΡΙΝ το queue_free()
 	if buff_type != 1: 
-		Turns.card_played()
+		var player = get_tree().get_first_node_in_group("Player")
+		if player and player.has_method("on_card_played"):
+			player.on_card_played()
+		elif Turns.has_method("end_player_turn"):
+			Turns.end_player_turn()
 		
 	queue_free()
 

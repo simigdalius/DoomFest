@@ -19,6 +19,8 @@ func start_player_turn() -> void:
 	print("Γύρος Παίκτη!")
 
 func end_player_turn() -> void:
+	if EventBus.buff_attack_turns > 0:
+		EventBus.buff_attack_turns -= 1
 	current_turn = Turn.ENEMY
 	turn_changed.emit(false)
 	print("Γύρος Αντιπάλου!")

@@ -6,7 +6,6 @@ var current_hp: int = 100
 @onready var sprite = $AnimatedSprite2D
 
 func _ready() -> void:
-	# Σύνδεση σημάτων
 	EventBus.enemy_healed.connect(_on_enemy_healed)
 	EventBus.enemy_attacked.connect(_on_enemy_attack)
 	EventBus.enemy_spawned.connect(_on_enemy_spawned)
@@ -23,7 +22,7 @@ func set_initial_color() -> void:
 	sprite.modulate = Color(random_r, random_g, random_b, 1.0)
 
 func _on_enemy_spawned() -> void:
-	current_hp = max_hp # Επαναφορά HP στο spawn
+	current_hp = max_hp 
 	sprite.play("default")
 	apply_random_color_with_tween()
 

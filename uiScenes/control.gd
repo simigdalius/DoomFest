@@ -27,8 +27,5 @@ func _on_button_3_pressed() -> void:
 	resume()
 
 
-func _on_button_2_pressed() -> void:
-	info_dialog.popup_centered()
-
 func _process(delta: float) -> void:
 	t()

@@ -5,14 +5,18 @@ const CARD_SCENE = preload("res://card.tscn")
 
 func _ready() -> void:
 	randomize()
+	add_to_group("Hand") 
 	Turns.turn_changed.connect(_on_turn_changed)
 	display_random_cards(4)
 
 func display_random_cards(amount: int) -> void:
 	for child in get_children():
+		remove_child(child)
 		child.queue_free()
 		
-	if all_cards.is_empty(): return
+	if all_cards.is_empty(): 
+		return
+		
 	var deck_pool = all_cards.duplicate()
 	deck_pool.shuffle()
 	
@@ -37,20 +41,25 @@ func show_all_cards() -> void:
 		tween.tween_property(card, "modulate:a", 1.0, 0.3)
 		tween.tween_property(card, "scale", Vector2(1.0, 1.0), 0.3)
 
-func _on_turn_changed(is_player_turn: bool) -> void:
-	if is_player_turn:
-		display_random_cards(4) 
-		show_all_cards()
+func _on_turn_changed(_is_player_turn: bool) -> void:
+	pass
 
 func shuffle_and_draw_one() -> void:
-	# Καθαρισμός των υπαρχουσών καρτών
+	if all_cards.is_empty():
+		return
+		
 	for child in get_children():
-		child.queue_free()
-	
-	# Αναμονή 1 frame για να ολοκληρωθεί το queue_free()
+		remove_child(child)
+		child.queue_free()  
+		
 	await get_tree().process_frame
 	
-	# Καλούμε τη συνάρτηση που ήδη έχεις δίνοντας amount = 1
-	display_random_cards(1)
-	show_all_cards()
-	print("Shuffle: Τραβήχτηκε 1 νέα κάρτα!")
+	var random_card_data = all_cards.pick_random()
+	var new_card = CARD_SCENE.instantiate()
+	new_card.data = random_card_data
+	add_child(new_card)
+	
+	new_card.modulate.a = 1.0
+	new_card.scale = Vector2(1.0, 1.0)
+
+	print("Shuffle: Τραβήχτηκε 1 νέα τυχαία κάρτα: ", random_card_data)

@@ -12,7 +12,6 @@ func _ready() -> void:
 	health_bar.max_value = max_hp
 	health_bar.value = current_hp
 	
-	# Σύνδεση σημάτων
 	EventBus.enemy_healed.connect(_on_enemy_healed)
 	EventBus.enemy_spawned.connect(_on_enemy_spawned)
 	EventBus.player_attacked.connect(_on_player_attacked)

@@ -6,6 +6,6 @@
 [resource]
 script = ExtResource("1_21dm8")
 card_name = "health"
-HEAL = 20
+HEAL = 30
 texture = ExtResource("2_1b4r7")
 metadata/_custom_type_script = "uid://dox4rg25uuqlo"

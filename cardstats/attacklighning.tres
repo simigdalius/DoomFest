@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("1_lr8h6")
 card_name = "lightning"
-DAMAGE = 30
+DAMAGE = 20
 texture = ExtResource("2_f4d2r")
+strong = 3
 metadata/_custom_type_script = "uid://dox4rg25uuqlo"
