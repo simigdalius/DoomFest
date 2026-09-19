@@ -81,8 +81,8 @@ theme_override_fonts/font = ExtResource("5_frbg7")
 theme_override_font_sizes/font_size = 20
 text = "A game made by simigdalius
 Game Design/Programming, Art/Sprites
-Sfx sounds:
-Music:
+Sfx sounds:400 sounds pack by Chequered Ink
+Music: Retro MIDI Music Pack 1 by LonePeakMusic 
 fonts: Asteroid blaster from dafont.com
 Game engine was Godot and assets made with pixel brush"
 horizontal_alignment = 1

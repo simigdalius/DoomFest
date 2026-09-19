@@ -1097,6 +1097,5 @@ autoplay = "timeout"
 [node name="AudioStreamPlayer" parent="." unique_id=1709012857 instance=ExtResource("33_p0q16")]
 
 [node name="AudioStreamPlayer2" parent="." unique_id=433213751 instance=ExtResource("34_1olue")]
-volume_db = -0.3
 
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

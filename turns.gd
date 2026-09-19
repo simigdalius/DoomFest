@@ -13,7 +13,7 @@ func is_player_turn() -> bool:
 
 func start_player_turn() -> void:
 	current_turn = Turn.PLAYER
-	cards_allowed_this_turn = 1 # Reset σε 1 κάρτα ανά γύρο
+	cards_allowed_this_turn = 1 
 	cards_played_this_turn = 0
 	turn_changed.emit(true)
 	print("Γύρος Παίκτη!")
