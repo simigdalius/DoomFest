@@ -25,13 +25,16 @@ func _ready() -> void:
 	sprite.play("default")
 
 func _on_buffed(buff_type: int) -> void:
+	$AudioStreamPlayer.play()
 	sprite.play("buff")
 	EventBus.tzoub.emit(4, 0.4)
 	
 	var tween = create_tween()
 	tween.tween_property(sprite, "position:x", sprite.position.x + 5.0, 0.1)
 	tween.tween_property(sprite, "position:x", sprite.position.x, 0.1)
-	
+	await sprite.animation_finished
+	sprite.play("default")
+	tween.finished.connect(func(): sprite.play("default"))
 	match buff_type:
 		1: 
 			print("Buff: Shuffle Hand!")
@@ -51,12 +54,12 @@ func _on_buffed(buff_type: int) -> void:
 			print("Buff: +10 Attack Power για 2 γύρους!")
 			buff_attack_turns = 2
 			attack_power = base_attack_power + 10
-			
-	tween.finished.connect(func(): sprite.play("default"))
+	
 
 # 1. Θεραπεία Παίκτη
 func _on_healed(amount: int) -> void:
-	sprite.play("health")
+	$AudioStreamPlayer.play()
+	sprite.play("heal")
 	EventBus.tzoub.emit(4, 0.4)
 	
 	current_hp = clamp(current_hp + amount, 0, max_hp)
@@ -71,12 +74,8 @@ func _on_healed(amount: int) -> void:
 # 2. Επίθεση Παίκτη
 func _on_player_attack(damage: int, _element_id: int) -> void:
 	sprite.play("attack")
+	await sprite.animation_finished
 	EventBus.tzoub.emit(15, 0.4)
-	var tween = create_tween()
-	tween.tween_property(sprite, "position:x", sprite.position.x + 20.0, 0.1)
-	tween.tween_property(sprite, "position:x", sprite.position.x, 0.1)
-	
-	await tween.finished
 	sprite.play("default")
 
 # 3. Λήψη Ζημιάς
@@ -113,7 +112,7 @@ func _on_turn_changed(is_player_turn: bool) -> void:
 			hand.display_random_cards(4)
 			hand.show_all_cards()
 
-# Στο player.gd
+
 func on_card_played() -> void:
 	plays_remaining -= 1
 	print("Κάρτες που απομένουν για αυτόν τον γύρο: ", plays_remaining)

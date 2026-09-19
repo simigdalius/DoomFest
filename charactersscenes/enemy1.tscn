@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://dvkjehtk6gtwx" path="res://assets/characters/ezgif-6709f8f1ff8b3570.png" id="2_litnx"]
 [ext_resource type="Texture2D" uid="uid://c0p0krphomgef" path="res://assets/characters/ezgif-611e5305ee9c0cfa.png" id="3_6xeqx"]
 [ext_resource type="Script" uid="uid://b5vr2tocdrwec" path="res://charactersscenes/enemy_1.gd" id="5_6xeqx"]
+[ext_resource type="AudioStream" uid="uid://dpbdfp3f4qc0k" path="res://assets/sfxandMusic/power_up_2.wav" id="6_axg3h"]
+[ext_resource type="AudioStream" uid="uid://fliusgsreyur" path="res://assets/sfxandMusic/punch.wav" id="7_8hkf8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6xeqx"]
 atlas = ExtResource("1_litnx")
@@ -302,3 +304,9 @@ sprite_frames = SubResource("SpriteFrames_gj5rp")
 animation = &"attack"
 frame = 7
 frame_progress = 1.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=630571065]
+stream = ExtResource("6_axg3h")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1772652985]
+stream = ExtResource("7_8hkf8")

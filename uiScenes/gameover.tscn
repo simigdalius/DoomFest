@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://406wv17unmt" path="res://assets/uiassets/2026-09-14-145332-Drawing 12 (5).png" id="3_ge7u8"]
 [ext_resource type="Texture2D" uid="uid://mosg72txomv6" path="res://assets/uiassets/2026-09-14-145327-Drawing 12 (6).png" id="4_25hl8"]
 [ext_resource type="Texture2D" uid="uid://1x474msu3skj" path="res://assets/uiassets/2026-09-14-145349-Idle (2).png" id="5_at1p3"]
+[ext_resource type="PackedScene" uid="uid://d3y3g5pf5o3rf" path="res://ingamescenes/sfx.tscn" id="7_ge7u8"]
+[ext_resource type="PackedScene" uid="uid://dixbv0l8kex2c" path="res://ingamescenes/music.tscn" id="8_25hl8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qdld5"]
 bg_color = Color(0.35686275, 0.40392157, 0.54901963, 1)
@@ -184,6 +186,10 @@ theme_override_font_sizes/font_size = 30
 text = "Your score is
 "
 horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" parent="." unique_id=1709012857 instance=ExtResource("7_ge7u8")]
+
+[node name="AudioStreamPlayer2" parent="." unique_id=433213751 instance=ExtResource("8_25hl8")]
 
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

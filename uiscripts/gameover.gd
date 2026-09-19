@@ -6,7 +6,9 @@ extends Control
 func _ready() -> void:
 	final_score_label.text = "Final Score: " + str(EventBus.final_score)
 	checkscore()
-
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("click"):
+		$AudioStreamPlayer.play()
 
 func _on_button_2_pressed() -> void:
 	get_tree().change_scene_to_file("res://uiScenes/mainmenu.tscn")

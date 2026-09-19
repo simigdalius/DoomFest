@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://c261nr7k3vfjk" path="res://assets/uiassets/2026-09-14-145323-Drawing 12 (4).png" id="5_43sw2"]
 [ext_resource type="FontFile" uid="uid://2s3ok1caketm" path="res://assets/Asteroid Blaster.ttf" id="5_43xuw"]
 [ext_resource type="Texture2D" uid="uid://1x474msu3skj" path="res://assets/uiassets/2026-09-14-145349-Idle (2).png" id="7_43xuw"]
+[ext_resource type="PackedScene" uid="uid://d3y3g5pf5o3rf" path="res://ingamescenes/sfx.tscn" id="8_1b30g"]
+[ext_resource type="PackedScene" uid="uid://dixbv0l8kex2c" path="res://ingamescenes/music.tscn" id="9_l0yo2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spaey"]
 bg_color = Color(0.35686275, 0.40392157, 0.54901963, 1)
@@ -134,5 +136,9 @@ horizontal_alignment = 1
 position = Vector2(584, 104)
 scale = Vector2(5, 5)
 texture = ExtResource("7_43xuw")
+
+[node name="AudioStreamPlayer" parent="." unique_id=1709012857 instance=ExtResource("8_1b30g")]
+
+[node name="AudioStreamPlayer2" parent="." unique_id=433213751 instance=ExtResource("9_l0yo2")]
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

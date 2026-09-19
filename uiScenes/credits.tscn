@@ -2,11 +2,13 @@
 
 [ext_resource type="Script" uid="uid://pwxvyj7qit8i" path="res://uiScenes/credits.gd" id="1_njv6p"]
 [ext_resource type="Texture2D" uid="uid://c0ju8cdd26sno" path="res://assets/uiassets/2026-09-14-145338-Drawing 9 (7).png" id="1_wxjq0"]
+[ext_resource type="PackedScene" uid="uid://d3y3g5pf5o3rf" path="res://ingamescenes/sfx.tscn" id="2_3pwj0"]
 [ext_resource type="Texture2D" uid="uid://da8be7lbf4xmv" path="res://assets/uiassets/2026-09-14-145343-Drawing 9 (8).png" id="2_njv6p"]
 [ext_resource type="Texture2D" uid="uid://mosg72txomv6" path="res://assets/uiassets/2026-09-14-145327-Drawing 12 (6).png" id="4_iucia"]
 [ext_resource type="FontFile" uid="uid://2s3ok1caketm" path="res://assets/Asteroid Blaster.ttf" id="5_frbg7"]
 [ext_resource type="Texture2D" uid="uid://c261nr7k3vfjk" path="res://assets/uiassets/2026-09-14-145323-Drawing 12 (4).png" id="6_3pwj0"]
 [ext_resource type="Texture2D" uid="uid://1x474msu3skj" path="res://assets/uiassets/2026-09-14-145349-Idle (2).png" id="7_frbg7"]
+[ext_resource type="PackedScene" uid="uid://dixbv0l8kex2c" path="res://ingamescenes/music.tscn" id="9_6nil0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spaey"]
 bg_color = Color(0.35686275, 0.40392157, 0.54901963, 1)
@@ -37,6 +39,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_njv6p")
+
+[node name="AudioStreamPlayer" parent="." unique_id=1709012857 instance=ExtResource("2_3pwj0")]
 
 [node name="Panel" type="Panel" parent="." unique_id=642938190]
 layout_mode = 1
@@ -152,5 +156,7 @@ horizontal_alignment = 1
 position = Vector2(584, 104)
 scale = Vector2(5, 5)
 texture = ExtResource("7_frbg7")
+
+[node name="AudioStreamPlayer2" parent="." unique_id=433213751 instance=ExtResource("9_6nil0")]
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

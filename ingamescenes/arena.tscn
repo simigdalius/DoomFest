@@ -21,8 +21,10 @@
 [ext_resource type="Resource" uid="uid://bgopf0kh3w0ur" path="res://cardstats/attackwater.tres" id="26_pslai"]
 [ext_resource type="Resource" uid="uid://fc7t58ibhq3v" path="res://cardstats/balladercard.tres" id="27_dbnxn"]
 [ext_resource type="Resource" uid="uid://dq3o0myjuhh2u" path="res://cardstats/buffcard.tres" id="28_6igc2"]
+[ext_resource type="AudioStream" uid="uid://chqquiyvvi2s6" path="res://assets/sfxandMusic/coin_collect.wav" id="29_2rgks"]
 [ext_resource type="Resource" uid="uid://dy2inw153ig0h" path="res://cardstats/healthcard.tres" id="29_v2gmw"]
 [ext_resource type="Script" uid="uid://cucrrxrppn8d3" path="res://ingamescenes/enemyturn.gd" id="30_cyt6c"]
+[ext_resource type="AudioStream" uid="uid://bgfyd8ypinfhu" path="res://assets/sfxandMusic/chips_gather_2.wav" id="30_g3ire"]
 [ext_resource type="Resource" uid="uid://bl4qx3nhws88b" path="res://cardstats/shufflecard.tres" id="30_qoxdy"]
 [ext_resource type="Script" uid="uid://dgjt2wxp8rhw4" path="res://assets/enemymove/enemymove.gd" id="31_pslai"]
 [ext_resource type="Resource" uid="uid://b4h1v2uv32oy8" path="res://assets/enemymove/attack.tres" id="32_dbnxn"]
@@ -47,6 +49,8 @@
 [ext_resource type="Texture2D" uid="uid://d21kwt2a8k8cv" path="res://assets/cardassets/attacklightningcard.png" id="45_nld25"]
 [ext_resource type="Texture2D" uid="uid://gmnyb6aor55v" path="res://assets/cardassets/healthcard.png" id="46_6vmms"]
 [ext_resource type="Texture2D" uid="uid://dehln2wkglwxu" path="res://assets/cardassets/buffcard.png" id="47_svynb"]
+[ext_resource type="PackedScene" uid="uid://d3y3g5pf5o3rf" path="res://ingamescenes/sfx.tscn" id="48_rau6s"]
+[ext_resource type="PackedScene" uid="uid://dixbv0l8kex2c" path="res://ingamescenes/music.tscn" id="51_g3ire"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_70chr"]
 texture = ExtResource("1_sos1w")
@@ -774,6 +778,13 @@ scale = Vector2(3, 3)
 texture = ExtResource("19_iyfc3")
 offset = Vector2(0, -16)
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="enemyturn" unique_id=566163613]
+stream = ExtResource("29_2rgks")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="enemyturn" unique_id=1037145587]
+stream = ExtResource("30_g3ire")
+autoplay = true
+
 [node name="Timer" type="Timer" parent="." unique_id=755327594]
 
 [node name="AnimatedSprite2D2" parent="." unique_id=901815485 instance=ExtResource("38_6igc2")]
@@ -1004,6 +1015,11 @@ texture = ExtResource("46_6vmms")
 position = Vector2(234, 220)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("47_svynb")
+
+[node name="AudioStreamPlayer" parent="." unique_id=1709012857 instance=ExtResource("48_rau6s")]
+
+[node name="AudioStreamPlayer2" parent="." unique_id=433213751 instance=ExtResource("51_g3ire")]
+stream_paused = false
 
 [connection signal="timeout" from="Timer" to="enemyturn" method="_on_timer_timeout"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

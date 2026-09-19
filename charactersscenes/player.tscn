@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://jcol20qefh6w" path="res://assets/characters/ezgif-33e35100a048dab5.png" id="4_dp3el"]
 [ext_resource type="Texture2D" uid="uid://beqeamp10b1wi" path="res://assets/characters/ezgif-15a68a5be635bc60.png" id="5_djdl5"]
 [ext_resource type="Texture2D" uid="uid://diwjs1mm8eo0h" path="res://assets/characters/ezgif-3bb3145787a39040.png" id="6_nvp52"]
+[ext_resource type="AudioStream" uid="uid://dpbdfp3f4qc0k" path="res://assets/sfxandMusic/power_up_2.wav" id="8_suymp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mqelj"]
 atlas = ExtResource("1_dapdj")
@@ -182,7 +183,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"attack",
-"speed": 7.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -202,7 +203,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"buff",
-"speed": 8.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -234,7 +235,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"death",
-"speed": 7.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -277,7 +278,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"dmg",
-"speed": 8.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -297,7 +298,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"heal",
-"speed": 8.0
+"speed": 5.0
 }]
 
 [node name="Node2D" type="Node2D" unique_id=459696147]
@@ -307,3 +308,8 @@ script = ExtResource("1_ksw4t")
 sprite_frames = SubResource("SpriteFrames_m3xxw")
 animation = &"attack"
 autoplay = "default"
+frame = 6
+frame_progress = 1.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=623666771]
+stream = ExtResource("8_suymp")

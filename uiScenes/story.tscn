@@ -5,6 +5,8 @@
 [ext_resource type="FontFile" uid="uid://2s3ok1caketm" path="res://assets/Asteroid Blaster.ttf" id="2_bqbvl"]
 [ext_resource type="Texture2D" uid="uid://406wv17unmt" path="res://assets/uiassets/2026-09-14-145332-Drawing 12 (5).png" id="2_pvdei"]
 [ext_resource type="Texture2D" uid="uid://mosg72txomv6" path="res://assets/uiassets/2026-09-14-145327-Drawing 12 (6).png" id="4_5rbmd"]
+[ext_resource type="PackedScene" uid="uid://d3y3g5pf5o3rf" path="res://ingamescenes/sfx.tscn" id="6_81snc"]
+[ext_resource type="PackedScene" uid="uid://dixbv0l8kex2c" path="res://ingamescenes/music.tscn" id="7_bgig6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x3xfl"]
 bg_color = Color(0.35686275, 0.40392157, 0.54901963, 1)
@@ -121,6 +123,10 @@ theme_override_font_sizes/font_size = 30
 text = "Welcome to DoomFest"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer" parent="." unique_id=1709012857 instance=ExtResource("6_81snc")]
+
+[node name="AudioStreamPlayer2" parent="." unique_id=433213751 instance=ExtResource("7_bgig6")]
 
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

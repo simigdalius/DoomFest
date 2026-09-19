@@ -32,6 +32,8 @@
 [ext_resource type="Texture2D" uid="uid://du4tnlomh474c" path="res://assets/playerstats/2026-09-14-144117-Healthbar (4).png" id="30_7ewi3"]
 [ext_resource type="Texture2D" uid="uid://yd8mynxtnvvk" path="res://assets/uiassets/ezgif-144456a3499f64e2.png" id="31_guig0"]
 [ext_resource type="Texture2D" uid="uid://bb3fbur67xdk7" path="res://assets/uiassets/ezgif-7ced31f72f3bd46d.png" id="32_6un4t"]
+[ext_resource type="PackedScene" uid="uid://d3y3g5pf5o3rf" path="res://ingamescenes/sfx.tscn" id="33_p0q16"]
+[ext_resource type="PackedScene" uid="uid://dixbv0l8kex2c" path="res://ingamescenes/music.tscn" id="34_1olue"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gj5rp"]
 bg_color = Color(0.33097258, 0.00018114009, 0.37625453, 1)
@@ -1091,5 +1093,10 @@ scale = Vector2(3.5, 3.5)
 sprite_frames = SubResource("SpriteFrames_gjfr8")
 animation = &"timeout"
 autoplay = "timeout"
+
+[node name="AudioStreamPlayer" parent="." unique_id=1709012857 instance=ExtResource("33_p0q16")]
+
+[node name="AudioStreamPlayer2" parent="." unique_id=433213751 instance=ExtResource("34_1olue")]
+volume_db = -0.3
 
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

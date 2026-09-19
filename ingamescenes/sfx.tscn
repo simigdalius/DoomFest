@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d3y3g5pf5o3rf"]
+
+[ext_resource type="AudioStream" uid="uid://cceip5puv3dk0" path="res://assets/sfxandMusic/controller_button_press.wav" id="1_p7bp2"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" unique_id=1709012857]
+stream = ExtResource("1_p7bp2")

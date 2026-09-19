@@ -6,6 +6,8 @@
 [ext_resource type="FontFile" uid="uid://2s3ok1caketm" path="res://assets/Asteroid Blaster.ttf" id="2_b643c"]
 [ext_resource type="Texture2D" uid="uid://yd8mynxtnvvk" path="res://assets/uiassets/ezgif-144456a3499f64e2.png" id="4_tl3uy"]
 [ext_resource type="Texture2D" uid="uid://fytgd38g8o2p" path="res://assets/cardassets/backofcard.png" id="5_68vck"]
+[ext_resource type="PackedScene" uid="uid://d3y3g5pf5o3rf" path="res://ingamescenes/sfx.tscn" id="7_ochvl"]
+[ext_resource type="PackedScene" uid="uid://dixbv0l8kex2c" path="res://ingamescenes/music.tscn" id="8_k8v78"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gj5rp"]
 bg_color = Color(0.35686275, 0.40392157, 0.54901963, 1)
@@ -258,6 +260,10 @@ offset_bottom = 680.0
 rotation = -3.6704273
 scale = Vector2(3, 3)
 theme_override_styles/panel = SubResource("StyleBoxTexture_gj5rp")
+
+[node name="AudioStreamPlayer" parent="." unique_id=1709012857 instance=ExtResource("7_ochvl")]
+
+[node name="AudioStreamPlayer2" parent="." unique_id=433213751 instance=ExtResource("8_k8v78")]
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

@@ -11,6 +11,8 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	$npc1.play("default")
 	$npc2.play("default")
+	if Input.is_action_just_pressed("click"):
+		$AudioStreamPlayer.play()
 
 func resume() -> void:
 	get_tree().paused = false

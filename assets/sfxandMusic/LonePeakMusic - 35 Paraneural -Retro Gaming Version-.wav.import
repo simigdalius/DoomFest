@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://geroeatvmlq2"
+path="res://.godot/imported/LonePeakMusic - 35 Paraneural -Retro Gaming Version-.wav-e399c05d1f3d5189965071c07f1317a2.sample"
+
+[deps]
+
+source_file="res://assets/sfxandMusic/LonePeakMusic - 35 Paraneural -Retro Gaming Version-.wav"
+dest_files=["res://.godot/imported/LonePeakMusic - 35 Paraneural -Retro Gaming Version-.wav-e399c05d1f3d5189965071c07f1317a2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

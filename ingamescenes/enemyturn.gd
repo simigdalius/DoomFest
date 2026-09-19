@@ -25,9 +25,10 @@ func play_enemy_turn() -> void:
 	
 	$froutakia.play("run")
 	$"../Timer".start()
+	$AudioStreamPlayer2.play()
 	
 	await $"../Timer".timeout
-	
+	$AudioStreamPlayer2.stop()
 	await generate_random_moves(3)
 
 	await get_tree().create_timer(1.0).timeout
@@ -49,7 +50,7 @@ func generate_random_moves(amount: int) -> void:
 		new_move_node.modulate.a = 0.0
 		new_move_node.scale = Vector2(0.2, 0.2)
 		new_move_node.pivot_offset = new_move_node.size / 2.0
-		
+		$AudioStreamPlayer.play()
 		add_child(new_move_node)
 		
 		if random_move.health > 0:

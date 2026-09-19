@@ -52,6 +52,7 @@ func _on_player_attacked(damage: int, element_id: int) -> void:
 	if current_hp <= 0:
 		_on_enemy_death()
 	else:
+		$AudioStreamPlayer2.play()
 		sprite.play("dmg")
 		var tween = create_tween()
 		tween.tween_property(sprite, "position:x", sprite.position.x - 10, 0.05)
@@ -61,6 +62,7 @@ func _on_player_attacked(damage: int, element_id: int) -> void:
 
 func _on_enemy_death() -> void:
 	print("Ο εχθρός πέθανε!")
+	$AudioStreamPlayer2.play()
 	sprite.play("death")
 	EventBus.tzoub.emit(15, 0.4)
 	var tween = create_tween()
@@ -72,6 +74,7 @@ func _on_enemy_death() -> void:
 
 func _on_enemy_healed(amount: int) -> void:
 	print("Ο εχθρός δέχθηκε θεραπεία: ", amount)
+	$AudioStreamPlayer.play()
 	sprite.play("health")
 	EventBus.tzoub.emit(4, 0.4)
 	var tween = create_tween()
@@ -82,6 +85,7 @@ func _on_enemy_healed(amount: int) -> void:
 
 func _on_enemy_attack(amount: int) -> void:
 	print("Ο εχθρός έκανε επίθεση με damage: ", amount)
+	$AudioStreamPlayer2.play()
 	sprite.play("attack")
 	EventBus.tzoub.emit(15, 0.4)
 	var tween = create_tween()

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dixbv0l8kex2c"]
+
+[ext_resource type="AudioStream" uid="uid://geroeatvmlq2" path="res://assets/sfxandMusic/LonePeakMusic - 35 Paraneural -Retro Gaming Version-.wav" id="1_u51mr"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" unique_id=433213751]
+stream = ExtResource("1_u51mr")
+volume_db = -20.0
+autoplay = true

@@ -1,6 +1,9 @@
 extends Control
 @onready var info_dialog: AcceptDialog = $AcceptDialog
-
+func _process(delta: float) -> void:
+	t()
+	if Input.is_action_just_pressed("click"):
+		$AudioStreamPlayer.play()
 func _ready() -> void:
 	$".".hide()
 func resume():
@@ -25,7 +28,3 @@ func _on_button_4_pressed() -> void:
 
 func _on_button_3_pressed() -> void:
 	resume()
-
-
-func _process(delta: float) -> void:
-	t()
