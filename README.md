@@ -12,6 +12,10 @@ Hover your mouse over the card you want to play, left-click, and drag it into th
 ---
 
 ### Credits & Assets
+A GAME MADE BY SIMIGDALIUS
+
+* **Game Design / Programming / Art:** simigdalius
+* **Writing:** simigdalius
 * **Music:** [Background Music Instrumental](https://itch.io/queue/c/7037592/background-music-instrumental?game_id=3318602&pa...)
 * **SFX:** [400 Sounds Pack](https://ci.itch.io/400-sounds-pack)
 * **Fonts:** [Asteroid Blaster](https://www.dafont.com/asteroid-blaster.charmap?back=theme)
