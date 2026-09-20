@@ -76,6 +76,7 @@ func _on_enemy_healed(amount: int) -> void:
 	print("Ο εχθρός δέχθηκε θεραπεία: ", amount)
 	$AudioStreamPlayer.play()
 	sprite.play("health")
+	current_hp = clamp(current_hp - amount, 0, max_hp)
 	EventBus.tzoub.emit(4, 0.4)
 	var tween = create_tween()
 	tween.tween_property(sprite, "position:x", sprite.position.x - 0.1, 0.1)
